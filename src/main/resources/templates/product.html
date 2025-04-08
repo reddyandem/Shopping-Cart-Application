@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{base::layout(~{::section})}">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Products</title>
+</head>
+<body>
+    <section>
+        <div class="container-fluid bg-success p-4 mt-5 ">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <form action="/products" method="get">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="ch">
+                            <button class="btn btn-light text-dark ms-3 col-md-2">
+                                <i class="fa-solid fa-magnifying-glass"></i> Search
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid mt-1">
+            <div class="row">
+                <div class="col-md-2 p-0">
+                    <div class="card shadow-sm p-0 mb-5 bg-body-tertiary rounded">
+                        <div class="card-body">
+                            <div class="list-group">
+                                <p class="fs-5">Category</p>
+                                <a href="/products"
+                                   th:classappend="${paramValue==''} ? 'active':''"
+                                   class="list-group-item list-group-item-action"
+                                   aria-current="true"> All </a>
+                                <a th:each="c:${categories}"
+                                   th:href="@{'/products?category='+${c.name}}"
+                                   th:classappend="${paramValue == c.name} ? 'active':''"
+                                   class="list-group-item list-group-item-action">[[${c.name}]]</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <!-- Sale Banner -->
+                    <div th:if="${saleActive}" class="alert alert-success text-center mt-3">
+                        <strong>Sale On Now!</strong> Enjoy [[${saleDiscount}]]% off until [[${saleEnd}]]!
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="fs-3 text-center">Products</p>
+                            <div class="row">
+                                <th:block th:if="${productsSize > 0}">
+                                    <div class="col-md-3 mt-2" th:each="p:${products}">
+                                        <div class="card card-sh">
+                                            <div class="card-body text-center" 
+                                                 th:classappend="${saleActive and p.discount < saleDiscount} ? 'border-danger' : ''">
+                                                <img alt="" th:src="@{'/img/product_img/'+${p.image}}"
+                                                     width="150px" height="150px">
+                                                <p class="fs-5 text-center">[[${p.title}]]</p>
+                                                <div class="row text-center">
+                                                    <p class="fs-6 fw-bold">
+                                                        <!-- Display discountPrice if discounted, otherwise price -->
+                                                        <span th:if="${p.discount > 0 or (saleActive and p.discount < saleDiscount)}">
+                                                            $ [[${#numbers.formatDecimal(p.discountPrice, 0, 2)}]]
+                                                        </span>
+                                                        <span th:unless="${p.discount > 0 or (saleActive and p.discount < saleDiscount)}">
+                                                            $ [[${#numbers.formatDecimal(p.price, 0, 2)}]]
+                                                        </span>
+                                                        <br>
+                                                        <!-- Strike-through original price if discounted -->
+                                                        <span th:if="${p.discount > 0 or (saleActive and p.discount < saleDiscount)}"
+                                                              class="text-decoration-line-through text-secondary">
+                                                            $ [[${#numbers.formatDecimal(p.price, 0, 2)}]]
+                                                        </span>
+                                                        <!-- Sale discount display -->
+                                                        <span th:if="${saleActive and p.discount < saleDiscount}"
+                                                              class="fs-6 text-danger">
+                                                            [[${saleDiscount}]]% OFF - SALE!
+                                                        </span>
+                                                        <!-- Regular discount display -->
+                                                        <span th:unless="${saleActive and p.discount < saleDiscount}" 
+                                                              th:if="${p.discount > 0}"
+                                                              class="fs-6 text-success">
+                                                            [[${p.discount}]]% off
+                                                        </span>
+                                                    </p>
+                                                    <a th:href="@{'/product/'+${p.id}}"
+                                                       class="btn btn-primary col-md-6 offset-md-3">View Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th:block>
+                                <th:block th:unless="${productsSize > 0}">
+                                    <p class="fs-4 text-center mt-4 text-danger">Product not available</p>
+                                </th:block>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start Pagination -->
+                    <div class="row">
+                        <div class="col-md-4">Total Products: [[${totalElements}]]</div>
+                        <div class="col-md-6">
+                            <th:block th:if="${productsSize > 0}">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination">
+                                        <li class="page-item"
+                                            th:classappend="${isFirst} ? 'disabled':''">
+                                            <a class="page-link"
+                                               th:href="@{'/products?pageNo='+${pageNo-1}}"
+                                               aria-label="Previous">
+                                                <span aria-hidden="true">«</span>
+                                            </a>
+                                        </li>
+                                        <li th:each="i:${#numbers.sequence(1,totalPages)}"
+                                            class="page-item" th:classappend="${pageNo+1==i}?'active':''">
+                                            <a class="page-link"
+                                               th:href="@{'/products?pageNo='+${i-1}}">[[${i}]]</a>
+                                        </li>
+                                        <li class="page-item"
+                                            th:classappend="${isLast} ? 'disabled':''">
+                                            <a class="page-link"
+                                               th:href="@{'/products?pageNo='+${pageNo+1}}"
+                                               aria-label="Next">
+                                                <span aria-hidden="true">»</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </th:block>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/67cd1c877e9edb1906e42f8e/1ilsjes7b';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+    </section>
+</body>
+</html>

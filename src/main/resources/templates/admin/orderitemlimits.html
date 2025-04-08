@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Manage Item Limits</title>
+
+</head>
+<body>
+    <section>
+        <div class="container mt-5 p-5">
+            <h2 class="text-center">Manage Item Limits</h2>
+            <div class="card p-3 mb-3">
+                <h4>Create New Item Limit</h4>
+                <form th:action="@{/admin/save-order-item-limit}" method="post">
+                    <div class="mb-3">
+                        <label>Product ID</label>
+                        <input type="number" name="productId" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label>Limit Quantity</label>
+                        <input type="number" name="limitQuantity" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label>Start Date</label>
+                        <input type="date" name="startDate" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label>End Date</label>
+                        <input type="date" name="endDate" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label>Active</label>
+                        <div class="form-check">
+										<input class="form-check-input" type="radio" checked
+											value="true" name="isActive" id="flexRadioDefault1">
+										<label class="form-check-label" for="flexRadioDefault1">
+											Active </label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" checked
+											value="true"  name="isActive"
+											 id="flexRadioDefault2"> <label
+											class="form-check-label" for="flexRadioDefault2">
+											Inactive </label>
+									</div>
+                        
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Limit</button>
+                </form>
+            </div>
+            <div class="card p-3">
+                <h4>Active Item Limits</h4>
+                <div th:if="${limits == null or #lists.isEmpty(limits)}" class="text-center text-warning">
+                    No active item limits available.
+                </div>
+                <table class="table" th:if="${not (#lists.isEmpty(limits))}">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Product ID</th>
+                            <th>Limit Quantity</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Active</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="limit : ${limits}">
+                            <td th:text="${limit.id} ?: 'N/A'">[[${limit.id}]]</td>
+                            <td th:text="${limit.productId} ?: 'N/A'">[[${limit.productId}]]</td>
+                            <td th:text="${limit.limitQuantity} ?: 'N/A'">[[${limit.limitQuantity}]]</td>
+                            <td th:text="${#temporals.format(limit.startDate, 'yyyy-MM-dd')} ?: 'N/A'">[[${#temporals.format(limit.startDate, 'yyyy-MM-dd')}]]</td>
+                            <td th:text="${#temporals.format(limit.endDate, 'yyyy-MM-dd')} ?: 'N/A'">[[${#temporals.format(limit.endDate, 'yyyy-MM-dd')}]]</td>
+                            <td th:text="${limit.isActive} ?: 'N/A'">[[${limit.isActive}]]</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

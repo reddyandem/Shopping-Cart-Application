@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <section>
+        <div class="container card-sh"
+            style="margin-top: 70px; margin-bottom: 100px">
+
+            <div class="col-md-12 p-5">
+                <div class="row">
+                    <th:block th:if="${session.succMsg}">
+                        <p class="text-success alert alert-success text-center" role="alert">[[${session.succMsg}]]</p>
+                        <th:block th:text="${@commnServiceImpl.removeSessionMessage()}"></th:block>
+                    </th:block>
+
+                    <th:block th:if="${session.errorMsg}">
+                        <p class="text-danger text-center  alert alert-danger">[[${session.errorMsg}]]</p>
+                        <th:block th:text="${@commnServiceImpl.removeSessionMessage()}"></th:block>
+                    </th:block>
+                    <div class="col-md-6 text-end">
+                        <img alt="" th:src="@{'/img/product_img/'+${product.image}}" width="300px"
+                            height="250px">
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <p class="fs-3">[[${product.title}]]</p>
+                        <p>
+                            <span class="fw-bold">Description : </span><br>[[${product.description}]]
+                        </p>
+                        <p>
+                            <span class="fw-bold"> Product Details: </span> <br> Status
+                            :
+                            <th:block th:if="${product.stock>0}">
+                                <span class="badge bg-success">Available</span>
+                            </th:block>
+
+                            <th:block th:unless="${product.stock>0}">
+                                <span class="badge bg-warning">out of stock</span>
+                            </th:block>
+
+                            <br> Category: [[${product.category}]]<br> Policy : 7
+                            Days Replacement & Return
+                        </p>
+                        <!-- Calculate effective discount based on discountPrice and price, and round to 0 decimals for percentage -->
+                        <p class="fs-14 fw-bold"> 
+                            <i class="fas fa-dollar-sign fs-14"></i>
+                            [[${#numbers.formatDecimal(product.discountPrice, 1, 2)}]] 
+                            <span class="fs-20 text-decoration-line-through text-secondary">[[${#numbers.formatDecimal(product.price, 1, 2)}]]</span>
+                            <span class="fs-14 text-success">[[${#numbers.formatDecimal((1 - (product.discountPrice / product.price)) * 100, 1, 0)}]]% off</span>
+                   
+                        </p>
+
+                        <div class="row">
+                            <div class="col-md-4 text-success text-center p-2">
+                                <i class="fas fa-money-bill-wave fa-2x"></i>
+                                <p>Cash On Delivery</p>
+                            </div>
+                            <div class="col-md-4 text-danger text-center p-2">
+                                <i class="fas fa-undo-alt fa-2x"></i>
+                                <p>Return Available</p>
+                            </div>
+                            <div class="col-md-4 text-primary text-center p-2">
+                                <i class="fas fa-truck-moving fa-2x"></i>
+                                <p>Free Shipping</p>
+                            </div>
+                        </div>
+
+                        <th:block th:if="${product.stock>0}">
+                            <th:block th:if="${user==null}">
+                                <a href="/signin" class="btn btn-danger col-md-12">Add To
+                                    Cart</a>
+                            </th:block>
+
+                            <th:block th:unless="${user==null}">
+                                <a
+                                    th:href="@{'/user/addCart?pid='+${product.id}+'&uid='+${user.id}}"
+                                    class="btn btn-danger col-md-12">Add To Cart</a>
+                            </th:block>
+                        </th:block>
+            
+                        <th:block th:unless="${product.stock>0}">
+                            <a href="#" class="btn text-white btn-warning col-md-12">Out
+                                of Stock</a>
+                        </th:block>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/67cd1c877e9edb1906e42f8e/1ilsjes7b';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+    </section>
+</body>
+</html>

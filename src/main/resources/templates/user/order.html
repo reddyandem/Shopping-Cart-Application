@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{base::layout(~{::section})}">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Checkout</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <section>
+        <div class="container mt-5 p-5">
+            <form action="/user/save-order" method="post" id="orders" novalidate>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3 row">
+                            <p class="text-center fs-4">Billing Address</p>
+                            <hr>
+                            <div class="col p-1">
+                                <label>First Name</label>
+                                <input type="text" name="firstName" required class="form-control mt-1">
+                            </div>
+                            <div class="col p-1">
+                                <label>Last Name</label>
+                                <input type="text" name="lastName" required class="form-control mt-1">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <div class="col p-1">
+                                <label>Email</label>
+                                <input type="email" name="email" required class="form-control col">
+                            </div>
+                            <div class="col p-1">
+                                <label>Mobile Number</label>
+                                <input type="text" name="mobileNo" required class="form-control col ms-2">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <div class="col p-1">
+                                <label>Address</label>
+                                <input type="text" name="address" required class="form-control col">
+                            </div>
+                            <div class="col p-1">
+                                <label>City</label>
+                                <input type="text" name="city" required class="form-control col ms-2">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <div class="col p-1">
+                                <label>State</label>
+                                <input type="text" name="state" required class="form-control col">
+                            </div>
+                            <div class="col p-1">
+                                <label>Pincode</label>
+                                <input type="number" name="pincode" required class="form-control col ms-2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="text-center fs-4">Payment Type</p>
+                        <hr>
+                        <div class="card">
+                            <div class="card-body">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>Total price</td>
+                                            <td>:</td>
+                                            <td>$[[${#numbers.formatDecimal(orderPrice, 1, 2)}]]</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Delivery Fee</td>
+                                            <td>:</td>
+                                            <td>$[[${#numbers.formatDecimal(13.99, 1, 2)}]]</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tax @10%</td>
+                                            <td>:</td>
+                                            <td>$[[${#numbers.formatDecimal(tax, 1, 2)}]]</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total Price</td>
+                                            <td>:</td>
+                                            <td><strong>$[[${#numbers.formatDecimal(totalOrderPrice, 1, 2)}]]</strong></td>
+                                        </tr>
+                                        <!-- Loyalty Points Redemption Section -->
+                                        <tr class="border-top">
+                                            <td colspan="2">
+                                                <label>
+                                                    <input type="checkbox" id="redeemCheckbox" name="redeemApplied" value="true">
+                                                    Redeem Loyalty Points (<span th:text="${totalPoints}"></span> Points)
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <strong id="redeemAmountDisplay">$[[${#numbers.formatDecimal(0.00, 1, 2)}]]</strong>
+                                            </td>
+                                        </tr>
+                                    
+                                        <tr th:unless="${totalPoints >= 2000}">
+                                            <td colspan="3" class="text-danger">
+                                                You need at least 2000 points to redeem. Current points: <span th:text="${totalPoints}"></span>
+                                            </td>
+                                        </tr>
+                                        <tr th:if="${discountPercentage != null and discountPercentage > 0}" class="border-top">
+                                        
+                                            <td><strong>Discount ([[${discountPercentage}]]%)</strong></td>
+                                            <td>:</td>
+                                            <td><strong>-$[[${#numbers.formatDecimal(discountAmount, 1, 2)}]]</strong></td>
+                                            
+                                        </tr>
+                                        <!-- Final Order Total Display -->
+                                        <tr class="border-top">
+                                            <td>Total Order Price</td>
+                                            <td>:</td>
+                                            <td><strong id="finalTotalDisplay">$[[${#numbers.formatDecimal(totalAfterDiscount, 1, 2)}]]</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card shadow p-3 mb-5 mt-2 bg-body-tertiary rounded">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label class="form-label">Select Payment Type</label>
+                                    <select required name="paymentType" class="form-control">
+                                        <option value="">--select--</option>
+                                        <option value="COD">Cash On Delivery</option>
+                                        <option value="ONLINE">Online Payment</option>
+                                    </select>
+                                </div>
+                                <button class="btn bg-success text-white col-md-12">Place Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hidden fields for JavaScript calculations -->
+                <input type="hidden" id="totalAfterDiscountValue" th:value="${#numbers.formatDecimal(totalAfterDiscount, 1, 2)}">
+                <input type="hidden" id="loyaltyPointsValue" th:value="${totalPoints}">
+               
+            </form>
+        </div>
+    </section>
+    <script type="text/javascript" th:src="@{/js/script.js}"></script>
+</body>
+</html>
