@@ -37,5 +37,7 @@ public interface UserService {
 	public UserDtls saveAdmin(UserDtls user);
 
 	public Boolean existsEmail(String email);
+	
+	UserDtls updateUserDiscount(Integer userId, Double discount);
 
 }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Manage User Discounts</title>
+</head>
+<body>
+    <section>
+        <div class="container-fluid mt-5 p-5">
+            <div class="card card-sh">
+                <div class="card-header text-center">
+                    <p class="fs-4" th:if="${userType == 1}">User Discounts</p>
+                    <p class="fs-4" th:if="${userType == 2}">Admin Discounts</p>
+                    
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Current Discount (%)</th>
+                                <th scope="col">New Discount (%)</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="user, iter : ${users}">
+                                <th scope="row">[[${user.id}]]</th>
+                                <td>[[${user.name}]]</td>
+                                <td>[[${user.email}]]</td>
+                                <td>[[${#numbers.formatDecimal(user.discount, 1, 2)}]]</td>
+                                <td>
+                                    <form th:action="@{/admin/update-discount}" method="post">
+                                        <input type="hidden" name="userId" th:value="${user.id}">
+                                        <input type="hidden" name="type" th:value="${userType}">
+                                        <input type="number" name="discount" class="form-control" step="0.01" min="0" max="100"
+                                               th:value="${user.discount}" placeholder="Enter discount %">
+                                        <button type="submit" class="btn btn-sm btn-primary mt-2">Update</button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form th:action="@{/admin/update-discount}" method="post">
+                                        <input type="hidden" name="userId" th:value="${user.id}">
+                                        <input type="hidden" name="type" th:value="${userType}">
+                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

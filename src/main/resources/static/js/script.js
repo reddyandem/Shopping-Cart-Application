@@ -48,7 +48,7 @@ function calculateRedeemedTotal() {
         console.log('Initial Total Order Price:', totalAfterDiscount, 'Total Points:', totalPoints);
 
         if (redeemCheckbox.checked && totalPoints >= 2000) {
-            redeemAmount = Math.min(totalPoints * 0.1, totalAfterDiscount);
+            redeemAmount = (Math.min(totalPoints * 0.1, totalAfterDiscount)) * 0.25;
             finalTotal = totalAfterDiscount - redeemAmount;
             finalTotal = Math.max(0, finalTotal);
             console.log('Checkbox checked - Redeem Amount:', redeemAmount, 'Final Total:', finalTotal);
@@ -62,7 +62,275 @@ function calculateRedeemedTotal() {
         console.error('Error in calculateRedeemedTotal:', e);
     }
 }
+// Retry logic for dynamic checkbox availability
+function retryForCheckbox() {
+    var redeemCheckbox = document.getElementById('redeemCheckbox');
+    
+    // If the checkbox is found, stop retrying and call the calculation
+    if (redeemCheckbox) {
+        clearInterval(retryInterval);  // Stop retrying
+        redeemCheckbox.addEventListener('change', calculateRedeemedTotal); // Attach change event listener
+        console.log("Redeem Checkbox found and event listener added.");
+        calculateRedeemedTotal(); // Perform an initial calculation
+    }
+}
 
+// Retry every 100ms to check if the checkbox is available
+var retryInterval = setInterval(retryForCheckbox, 100);
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if the form exists on the page (to avoid errors on other pages)
+    const form = document.querySelector('form[action="/admin/save-order-item-limit"]');
+    if (!form) return;
+
+    // Get today's date (April 22, 2025, for reference, but dynamically calculated)
+    const today = new Date();
+    const todayString = today.toISOString().split('T')[0]; // Format: YYYY-MM-DD
+
+    // Set the minimum start date to today (disables past dates)
+    const startDateInput = document.getElementById('startDate');
+    if (startDateInput) {
+        startDateInput.setAttribute('min', todayString);
+
+        // Dynamically update the end date's minimum value based on the start date
+        startDateInput.addEventListener('change', function() {
+            const startDate = new Date(this.value);
+            if (startDate) {
+                const endDateInput = document.getElementById('endDate');
+                // Set the minimum end date to the day after the start date
+                const minEndDate = new Date(startDate);
+                minEndDate.setDate(startDate.getDate() + 1);
+                endDateInput.setAttribute('min', minEndDate.toISOString().split('T')[0]);
+                
+                // Reset the end date if it's before the new start date
+                const currentEndDate = new Date(endDateInput.value);
+                if (currentEndDate <= startDate) {
+                    endDateInput.value = '';
+                }
+            }
+        });
+    }
+
+    // Validate the end date when changed
+    const endDateInput = document.getElementById('endDate');
+    if (endDateInput) {
+        endDateInput.addEventListener('change', function() {
+            const startDate = new Date(startDateInput.value);
+            const endDate = new Date(this.value);
+            if (startDate && endDate <= startDate) {
+                alert('End date must be after the start date.');
+                this.value = '';
+            }
+        });
+    }
+
+    // Validate product ID (must be > 0)
+    const productIdInput = document.getElementById('productId');
+    const productIdError = document.getElementById('productIdError');
+    if (productIdInput && productIdError) {
+        productIdInput.addEventListener('input', function() {
+            const value = parseInt(this.value);
+            if (isNaN(value) || value <= 0) {
+                productIdError.style.display = 'block';
+                this.value = '';
+            } else {
+                productIdError.style.display = 'none';
+            }
+        });
+    }
+
+    // Validate quantity input (must be > 0)
+    const limitQuantityInput = document.getElementById('limitQuantity');
+    const quantityError = document.getElementById('quantityError');
+    if (limitQuantityInput && quantityError) {
+        limitQuantityInput.addEventListener('input', function() {
+            const value = parseInt(this.value);
+            if (isNaN(value) || value <= 0) {
+                quantityError.style.display = 'block';
+                this.value = '';
+            } else {
+                quantityError.style.display = 'none';
+            }
+        });
+    }
+
+    // Prevent form submission if product ID or quantity is invalid
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            const productId = parseInt(productIdInput.value);
+            const quantity = parseInt(limitQuantityInput.value);
+            if (isNaN(productId) || productId <= 0) {
+                event.preventDefault();
+                alert('Please enter a Product ID greater than 0.');
+            }
+            if (isNaN(quantity) || quantity <= 0) {
+                event.preventDefault();
+                alert('Please enter a quantity greater than 0.');
+            }
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Item Limit Form Validations
+    const itemLimitForm = document.querySelector('form[action="/admin/save-order-item-limit"]');
+    if (itemLimitForm) {
+        // Get today's date (April 22, 2025, for reference, but dynamically calculated)
+        const today = new Date();
+        const todayString = today.toISOString().split('T')[0]; // Format: YYYY-MM-DD
+
+        // Set the minimum start date to today (disables past dates)
+        const startDateInput = document.getElementById('startDate');
+        if (startDateInput) {
+            startDateInput.setAttribute('min', todayString);
+
+            // Dynamically update the end date's minimum value based on the start date
+            startDateInput.addEventListener('change', function() {
+                const startDate = new Date(this.value);
+                if (startDate) {
+                    const endDateInput = document.getElementById('endDate');
+                    // Set the minimum end date to the day after the start date
+                    const minEndDate = new Date(startDate);
+                    minEndDate.setDate(startDate.getDate() + 1);
+                    endDateInput.setAttribute('min', minEndDate.toISOString().split('T')[0]);
+                    
+                    // Reset the end date if it's before the new start date
+                    const currentEndDate = new Date(endDateInput.value);
+                    if (currentEndDate <= startDate) {
+                        endDateInput.value = '';
+                    }
+                }
+            });
+        }
+
+        // Validate the end date when changed
+        const endDateInput = document.getElementById('endDate');
+        if (endDateInput) {
+            endDateInput.addEventListener('change', function() {
+                const startDate = new Date(startDateInput.value);
+                const endDate = new Date(this.value);
+                if (startDate && endDate <= startDate) {
+                    alert('End date must be after the start date.');
+                    this.value = '';
+                }
+            });
+        }
+
+        // Validate product ID (must be > 0)
+        const productIdInput = document.getElementById('productId');
+        const productIdError = document.getElementById('productIdError');
+        if (productIdInput && productIdError) {
+            productIdInput.addEventListener('input', function() {
+                const value = parseInt(this.value);
+                if (isNaN(value) || value <= 0) {
+                    productIdError.style.display = 'block';
+                    this.value = '';
+                } else {
+                    productIdError.style.display = 'none';
+                }
+            });
+        }
+
+        // Validate quantity input (must be > 0)
+        const limitQuantityInput = document.getElementById('limitQuantity');
+        const quantityError = document.getElementById('quantityError');
+        if (limitQuantityInput && quantityError) {
+            limitQuantityInput.addEventListener('input', function() {
+                const value = parseInt(this.value);
+                if (isNaN(value) || value <= 0) {
+                    quantityError.style.display = 'block';
+                    this.value = '';
+                } else {
+                    quantityError.style.display = 'none';
+                }
+            });
+        }
+
+        // Prevent form submission if product ID or quantity is invalid
+        itemLimitForm.addEventListener('submit', function(event) {
+            const productId = parseInt(productIdInput.value);
+            const quantity = parseInt(limitQuantityInput.value);
+            if (isNaN(productId) || productId <= 0) {
+                event.preventDefault();
+                alert('Please enter a Product ID greater than 0.');
+            }
+            if (isNaN(quantity) || quantity <= 0) {
+                event.preventDefault();
+                alert('Please enter a quantity greater than 0.');
+            }
+        });
+    }
+
+    // Sale Form Validations
+    const saleForm = document.querySelector('form[action="/admin/save-sale"]');
+    if (saleForm) {
+        // Get today's date (April 22, 2025, for reference, but dynamically calculated)
+        const today = new Date();
+        const todayString = today.toISOString().split('T')[0]; // Format: YYYY-MM-DD
+
+        // Set the minimum start date to today (disables past dates)
+        const startDateInput = document.getElementById('startDate');
+        if (startDateInput) {
+            startDateInput.setAttribute('min', todayString);
+
+            // Dynamically update the end date's minimum value based on the start date
+            startDateInput.addEventListener('change', function() {
+                const startDate = new Date(this.value);
+                if (startDate) {
+                    const endDateInput = document.getElementById('endDate');
+                    // Set the minimum end date to the day after the start date
+                    const minEndDate = new Date(startDate);
+                    minEndDate.setDate(startDate.getDate() + 1);
+                    endDateInput.setAttribute('min', minEndDate.toISOString().split('T')[0]);
+                    
+                    // Reset the end date if it's before the new start date
+                    const currentEndDate = new Date(endDateInput.value);
+                    if (currentEndDate <= startDate) {
+                        endDateInput.value = '';
+                    }
+                }
+            });
+        }
+
+        // Validate the end date when changed
+        const endDateInput = document.getElementById('endDate');
+        if (endDateInput) {
+            endDateInput.addEventListener('change', function() {
+                const startDate = new Date(startDateInput.value);
+                const endDate = new Date(this.value);
+                if (startDate && endDate <= startDate) {
+                    alert('End date must be after the start date.');
+                    this.value = '';
+                }
+            });
+        }
+
+        // Validate discount percentage (must be > 0)
+        const discountInput = document.getElementById('discountPercentage');
+        const discountError = document.getElementById('discountError');
+        if (discountInput && discountError) {
+            discountInput.addEventListener('input', function() {
+                const value = parseFloat(this.value);
+                if (isNaN(value) || value <= 0) {
+                    discountError.style.display = 'block';
+                    this.value = '';
+                } else {
+                    discountError.style.display = 'none';
+                }
+            });
+        }
+
+        // Prevent form submission if discount percentage is invalid
+        saleForm.addEventListener('submit', function(event) {
+            const discount = parseFloat(discountInput.value);
+            if (isNaN(discount) || discount <= 0) {
+                event.preventDefault();
+                alert('Please enter a discount percentage greater than 0.');
+            }
+        });
+    }
+});
 
 $(function(){
 

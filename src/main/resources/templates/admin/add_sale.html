@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{base::layout(~{::section})}">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Add Sale</title>
+</head>
+<body>
+    <section>
+        <div class="container mt-5 p-5">
+            <h2 class="text-center">Add Sale</h2>
+            <div class="card p-3">
+                <form th:action="@{/admin/save-sale}" method="post">
+                    <!-- Start Date -->
+                    <div class="mb-3">
+                        <label for="startDate" class="form-label">Start Date</label>
+                        <input type="date" class="form-control" id="startDate" name="startDate" required>
+                    </div>
+
+                    <!-- End Date -->
+                    <div class="mb-3">
+                        <label for="endDate" class="form-label">End Date</label>
+                        <input type="date" class="form-control" id="endDate" name="endDate" required>
+                    </div>
+
+                    <!-- Discount Percentage -->
+                    <div class="mb-3">
+                        <label for="discountPercentage" class="form-label">Discount Percentage</label>
+                        <input type="number" step="0.01" class="form-control" id="discountPercentage" name="discountPercentage" min="1" required>
+                        <div id="discountError" class="text-danger" style="display: none;">Discount percentage must be greater than 0.</div>
+                    </div>
+
+                    <!-- Active Status -->
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="isActive" name="isActive" checked>
+                        <label class="form-check-label" for="isActive">Is Active</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save Sale</button>
+                </form>
+            </div>
+            <!-- Display success message if present -->
+            <div th:if="${message}" class="alert alert-success mt-3" th:text="${message}"></div>
+        </div>
+    </section>
+</body>
+</html>

@@ -3,12 +3,16 @@ package com.ecom.service.impl;
 import java.sql.Date;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ecom.controller.AdminController;
 import com.ecom.model.LoyaltyPoints;
 import com.ecom.model.UserDtls;
 import com.ecom.repository.LoyaltyPointsRepository;
+import com.ecom.repository.ProductOrderRepository;
 import com.ecom.service.LoyaltyPointsService;
 
 
@@ -17,6 +21,9 @@ public class LoyaltyPointsServiceImpl implements LoyaltyPointsService {
 
     @Autowired
     private LoyaltyPointsRepository loyaltyPointsRepository;
+    
+    @Autowired 
+    private ProductOrderRepository productOrderRepository;
 
     @Override
     public List<LoyaltyPoints> getPointsByUserId(Integer userId) {
@@ -68,5 +75,27 @@ public class LoyaltyPointsServiceImpl implements LoyaltyPointsService {
             loyaltyPointsRepository.save(points);
             System.out.println("Points deducted: " + pointsToDeduct + ", New Total: " + points.getTotalPoints());
         }
+    }
+
+    private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
+    
+	@Override
+	public boolean isEligibleForRedemption(Integer userId, double minimumPoints) { 
+logger.info("Checking redemption eligibility for userId: {}, minimumPoints: {}", userId, minimumPoints);
+        
+        // Fetch loyalty points
+        List<LoyaltyPoints> pointsList = getPointsByUserId(userId);
+        double totalPoints = (pointsList != null && !pointsList.isEmpty()) ? pointsList.get(0).getTotalPoints() : 0.0;
+        logger.info("Total points for userId {}: {}", userId, totalPoints);
+        
+        // Count past orders
+        long orderCount = productOrderRepository.countByUserId(userId);
+        System.out.println("Order count for userId" + userId +  orderCount);
+        
+        // Check eligibility
+        boolean eligible = totalPoints >= minimumPoints && orderCount > 5;
+        logger.info("Eligibility check for userId {}: totalPoints={} (>= {}), orderCount={} (> 5), eligible={}",
+                userId, totalPoints, minimumPoints, orderCount, eligible);
+        return eligible;
     }
 }

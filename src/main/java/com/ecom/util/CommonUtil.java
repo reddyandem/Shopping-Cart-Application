@@ -15,6 +15,7 @@ import com.ecom.service.UserService;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 @Component
 public class CommonUtil {
@@ -95,6 +96,9 @@ public class CommonUtil {
 		return userDtls;
 	}
 	
-	
+	public void removeSessionMessage(HttpSession session) {
+        session.removeAttribute("succMsg");
+        session.removeAttribute("errorMsg");
+    }
 
 }

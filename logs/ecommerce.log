@@ -1,0 +1,794 @@
+2025-04-24T14:06:16.650-05:00  INFO 22068 --- [restartedMain] com.ecom.ShoppingCartApplication         : Starting ShoppingCartApplication using Java 21.0.5 with PID 22068 (C:\Users\prudh\Desktop\ecommerce-main\target\classes started by prudh in C:\Users\prudh\Desktop\ecommerce-main)
+2025-04-24T14:06:16.651-05:00 DEBUG 22068 --- [restartedMain] com.ecom.ShoppingCartApplication         : Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-04-24T14:06:16.651-05:00  INFO 22068 --- [restartedMain] com.ecom.ShoppingCartApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-04-24T14:06:17.098-05:00  INFO 22068 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T14:06:17.180-05:00  INFO 22068 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81 ms. Found 8 JPA repository interfaces.
+2025-04-24T14:06:17.599-05:00  INFO 22068 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T14:06:17.605-05:00  INFO 22068 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T14:06:17.606-05:00  INFO 22068 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-04-24T14:06:17.646-05:00  INFO 22068 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T14:06:17.647-05:00  INFO 22068 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 991 ms
+2025-04-24T14:06:17.737-05:00  INFO 22068 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T14:06:17.744-05:00  INFO 22068 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T14:06:17.755-05:00  INFO 22068 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T14:06:17.759-05:00  INFO 22068 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-04-24T14:06:17.913-05:00  INFO 22068 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@44cf32ef
+2025-04-24T14:06:17.914-05:00  INFO 22068 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-04-24T14:06:17.917-05:00  WARN 22068 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T14:06:17.917-05:00  WARN 22068 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T14:06:18.177-05:00  INFO 22068 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T14:06:18.567-05:00  INFO 22068 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:06:19.096-05:00  WARN 22068 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T14:06:19.119-05:00  INFO 22068 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-24T14:06:19.209-05:00  INFO 22068 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7ec3cb6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1291cd7c, org.springframework.security.web.context.SecurityContextHolderFilter@2686f18f, org.springframework.security.web.header.HeaderWriterFilter@13637c6b, org.springframework.security.web.authentication.logout.LogoutFilter@4d533f27, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@53928be4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6f9796dd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5440197f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2856927a, org.springframework.security.web.access.ExceptionTranslationFilter@73991ebe, org.springframework.security.web.access.intercept.AuthorizationFilter@4afe1064]
+2025-04-24T14:06:19.312-05:00  INFO 22068 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-24T14:06:19.336-05:00  INFO 22068 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-04-24T14:06:19.344-05:00  INFO 22068 --- [restartedMain] com.ecom.ShoppingCartApplication         : Started ShoppingCartApplication in 3.098 seconds (process running for 155.031)
+2025-04-24T14:06:19.347-05:00  INFO 22068 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-04-24T14:07:20.387-05:00  INFO 22068 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-24T14:07:20.392-05:00  INFO 22068 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-24T14:07:20.404-05:00  INFO 22068 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2025-04-24T14:07:38.153-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:07:38.155-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:07:38.155-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:07:38.159-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:07:38.161-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:07:38.161-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:07:38.162-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:07:38.162-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:07:38.163-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:07:38.163-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:07:38.163-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:07:38.163-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:07:38.163-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:07:38.163-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:07:38.163-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:07:38.167-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:07:38.167-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:07:38.171-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:07:38.171-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:07:38.171-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:07:53.361-05:00  INFO 22068 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:07:53.375-05:00  INFO 22068 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:07:53.375-05:00  INFO 22068 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:07:53.379-05:00  INFO 22068 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:07:53.379-05:00  INFO 22068 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:07:55.001-05:00  INFO 22068 --- [http-nio-8080-exec-5] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:07:55.005-05:00  INFO 22068 --- [http-nio-8080-exec-5] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:07:55.005-05:00  INFO 22068 --- [http-nio-8080-exec-5] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:07:55.005-05:00  INFO 22068 --- [http-nio-8080-exec-5] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:07:55.005-05:00  INFO 22068 --- [http-nio-8080-exec-5] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:14:04.669-05:00  INFO 22068 --- [http-nio-8080-exec-3] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:14:04.674-05:00  INFO 22068 --- [http-nio-8080-exec-3] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:14:04.676-05:00  INFO 22068 --- [http-nio-8080-exec-3] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:14:04.676-05:00  INFO 22068 --- [http-nio-8080-exec-3] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:14:04.676-05:00  INFO 22068 --- [http-nio-8080-exec-3] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:14:58.763-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:14:58.763-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:14:58.763-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:14:58.763-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:14:58.763-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:15:17.673-05:00  INFO 22068 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:15:17.673-05:00  INFO 22068 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:15:17.678-05:00  INFO 22068 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:15:17.678-05:00  INFO 22068 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:15:17.678-05:00  INFO 22068 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:15:17.678-05:00  INFO 22068 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:15:17.678-05:00  INFO 22068 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:15:17.678-05:00  INFO 22068 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:15:17.681-05:00  INFO 22068 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:15:17.681-05:00  INFO 22068 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:15:17.681-05:00  INFO 22068 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:15:17.681-05:00  INFO 22068 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:15:17.681-05:00  INFO 22068 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:15:17.681-05:00  INFO 22068 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:15:17.681-05:00  INFO 22068 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:15:17.684-05:00  INFO 22068 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:15:17.684-05:00  INFO 22068 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:15:17.684-05:00  INFO 22068 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:15:17.684-05:00  INFO 22068 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:15:17.687-05:00  INFO 22068 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:15:20.111-05:00  INFO 22068 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:15:20.114-05:00  INFO 22068 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:15:20.114-05:00  INFO 22068 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:15:20.114-05:00  INFO 22068 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:15:20.114-05:00  INFO 22068 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:15:20.118-05:00  INFO 22068 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:15:20.124-05:00  INFO 22068 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:15:20.126-05:00  INFO 22068 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:15:20.126-05:00  INFO 22068 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:15:20.126-05:00  INFO 22068 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:15:21.606-05:00  INFO 22068 --- [http-nio-8080-exec-6] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:15:21.606-05:00  INFO 22068 --- [http-nio-8080-exec-6] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:15:21.606-05:00  INFO 22068 --- [http-nio-8080-exec-6] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:15:21.611-05:00  INFO 22068 --- [http-nio-8080-exec-6] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:15:21.611-05:00  INFO 22068 --- [http-nio-8080-exec-6] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:15:21.621-05:00  INFO 22068 --- [http-nio-8080-exec-6] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:15:21.621-05:00  INFO 22068 --- [http-nio-8080-exec-6] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:15:21.621-05:00  INFO 22068 --- [http-nio-8080-exec-6] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:15:21.621-05:00  INFO 22068 --- [http-nio-8080-exec-6] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:15:21.621-05:00  INFO 22068 --- [http-nio-8080-exec-6] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:16:55.357-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:16:55.360-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:16:55.361-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:16:55.361-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:16:55.361-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:16:55.361-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:16:55.361-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:16:55.361-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:16:55.362-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:16:55.362-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:16:55.362-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:16:55.362-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:16:55.362-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:16:55.362-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:16:55.362-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:16:55.363-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:16:55.363-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:16:55.363-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:16:55.363-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:16:55.363-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:16:57.533-05:00  INFO 22068 --- [http-nio-8080-exec-10] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:16:57.534-05:00  INFO 22068 --- [http-nio-8080-exec-10] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:16:57.535-05:00  INFO 22068 --- [http-nio-8080-exec-10] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:16:57.535-05:00  INFO 22068 --- [http-nio-8080-exec-10] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:16:57.535-05:00  INFO 22068 --- [http-nio-8080-exec-10] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:16:59.107-05:00  INFO 22068 --- [http-nio-8080-exec-9] com.ecom.controller.UserController       : Adding product to cart: productId=1, userId=2, quantity=1
+2025-04-24T14:16:59.187-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:16:59.187-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:16:59.187-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:16:59.187-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:16:59.187-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:16:59.196-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:16:59.196-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:16:59.196-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:16:59.196-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:16:59.198-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:16:59.198-05:00  INFO 22068 --- [http-nio-8080-exec-9] com.ecom.controller.UserController       : Cart items for user 2: [Cart{id=1, productId=com.ecom.model.Product@243ff0c, userId=com.ecom.model.UserDtls@72939629, quantity=2, totalOrderPrice=1799.982}, Cart{id=7, productId=com.ecom.model.Product@28209f53, userId=com.ecom.model.UserDtls@72939629, quantity=1, totalOrderPrice=1823.972}]
+2025-04-24T14:16:59.248-05:00 DEBUG 22068 --- [http-nio-8080-exec-9] com.ecom.controller.UserController       : Comparing cart productId 1 with request productId 1: true
+2025-04-24T14:16:59.248-05:00 DEBUG 22068 --- [http-nio-8080-exec-9] com.ecom.controller.UserController       : Cart item quantity for productId 1: 2
+2025-04-24T14:16:59.248-05:00 DEBUG 22068 --- [http-nio-8080-exec-9] com.ecom.controller.UserController       : Comparing cart productId 2 with request productId 1: false
+2025-04-24T14:16:59.248-05:00  INFO 22068 --- [http-nio-8080-exec-9] com.ecom.controller.UserController       : Existing quantity for productId 1: 2
+2025-04-24T14:16:59.248-05:00  INFO 22068 --- [http-nio-8080-exec-9] com.ecom.controller.UserController       : Total quantity for productId 1: 3
+2025-04-24T14:16:59.252-05:00  INFO 22068 --- [http-nio-8080-exec-9] com.ecom.service.OrderItemLimitService   : Fetching active limits for productId: 1
+2025-04-24T14:16:59.398-05:00  INFO 22068 --- [http-nio-8080-exec-9] com.ecom.service.OrderItemLimitService   : Found 0 active limits for productId 1: []
+2025-04-24T14:16:59.399-05:00  INFO 22068 --- [http-nio-8080-exec-9] com.ecom.controller.UserController       : Active limits for productId 1: []
+2025-04-24T14:16:59.399-05:00  INFO 22068 --- [http-nio-8080-exec-9] com.ecom.controller.UserController       : No active limits found for productId 1. Allowing addition to cart.
+2025-04-24T14:16:59.482-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:16:59.482-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:16:59.482-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:16:59.482-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:16:59.482-05:00  INFO 22068 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:17:00.314-05:00  INFO 22068 --- [http-nio-8080-exec-9] com.ecom.controller.UserController       : Cart save result: Cart{id=1, productId=com.ecom.model.Product@243ff0c, userId=com.ecom.model.UserDtls@72939629, quantity=3, totalOrderPrice=1799.982}
+2025-04-24T14:17:00.317-05:00  INFO 22068 --- [http-nio-8080-exec-9] com.ecom.controller.UserController       : Successfully added productId 1 to cart for userId 2
+2025-04-24T14:17:00.493-05:00  INFO 22068 --- [http-nio-8080-exec-3] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:17:00.493-05:00  INFO 22068 --- [http-nio-8080-exec-3] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:17:00.493-05:00  INFO 22068 --- [http-nio-8080-exec-3] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:17:00.493-05:00  INFO 22068 --- [http-nio-8080-exec-3] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:17:00.493-05:00  INFO 22068 --- [http-nio-8080-exec-3] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:17:22.712-05:00  INFO 22068 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:17:22.712-05:00  INFO 22068 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:17:22.712-05:00  INFO 22068 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:17:22.713-05:00  INFO 22068 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:17:22.713-05:00  INFO 22068 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:17:22.717-05:00  INFO 22068 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:17:22.717-05:00  INFO 22068 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:17:22.717-05:00  INFO 22068 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:17:22.717-05:00  INFO 22068 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:17:22.718-05:00  INFO 22068 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:17:24.541-05:00  INFO 22068 --- [http-nio-8080-exec-10] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:17:24.542-05:00  INFO 22068 --- [http-nio-8080-exec-10] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:17:24.542-05:00  INFO 22068 --- [http-nio-8080-exec-10] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:17:24.542-05:00  INFO 22068 --- [http-nio-8080-exec-10] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:17:24.542-05:00  INFO 22068 --- [http-nio-8080-exec-10] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:17:24.548-05:00  INFO 22068 --- [http-nio-8080-exec-10] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:17:24.549-05:00  INFO 22068 --- [http-nio-8080-exec-10] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:17:24.549-05:00  INFO 22068 --- [http-nio-8080-exec-10] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:17:24.549-05:00  INFO 22068 --- [http-nio-8080-exec-10] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:17:24.549-05:00  INFO 22068 --- [http-nio-8080-exec-10] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:18:52.385-05:00  INFO 22068 --- [RMI TCP Connection(18)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-04-24T14:18:52.511-05:00  INFO 22068 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 3 class path changes (0 additions, 0 deletions, 3 modifications)
+2025-04-24T14:18:52.559-05:00  INFO 22068 --- [RMI TCP Connection(18)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:18:52.603-05:00  INFO 22068 --- [RMI TCP Connection(18)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-04-24T14:18:52.660-05:00  INFO 22068 --- [RMI TCP Connection(18)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-04-24T14:18:53.433-05:00  INFO 22068 --- [restartedMain] com.ecom.ShoppingCartApplication         : Starting ShoppingCartApplication using Java 21.0.5 with PID 22068 (C:\Users\prudh\Desktop\ecommerce-main\target\classes started by prudh in C:\Users\prudh\Desktop\ecommerce-main)
+2025-04-24T14:18:53.434-05:00 DEBUG 22068 --- [restartedMain] com.ecom.ShoppingCartApplication         : Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-04-24T14:18:53.434-05:00  INFO 22068 --- [restartedMain] com.ecom.ShoppingCartApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-04-24T14:18:54.059-05:00  INFO 22068 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T14:18:54.110-05:00  INFO 22068 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 8 JPA repository interfaces.
+2025-04-24T14:18:54.408-05:00  INFO 22068 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T14:18:54.412-05:00  INFO 22068 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T14:18:54.413-05:00  INFO 22068 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-04-24T14:18:54.450-05:00  INFO 22068 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T14:18:54.450-05:00  INFO 22068 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1010 ms
+2025-04-24T14:18:54.590-05:00  INFO 22068 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T14:18:54.597-05:00  INFO 22068 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T14:18:54.609-05:00  INFO 22068 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T14:18:54.612-05:00  INFO 22068 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2025-04-24T14:18:54.792-05:00  INFO 22068 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@45c60224
+2025-04-24T14:18:54.793-05:00  INFO 22068 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2025-04-24T14:18:54.795-05:00  WARN 22068 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T14:18:54.796-05:00  WARN 22068 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T14:18:55.484-05:00  INFO 22068 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T14:18:55.814-05:00  INFO 22068 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:18:56.594-05:00  WARN 22068 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T14:18:56.641-05:00  INFO 22068 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-24T14:18:56.803-05:00  INFO 22068 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1cb8309a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@16854b64, org.springframework.security.web.context.SecurityContextHolderFilter@29ce3e15, org.springframework.security.web.header.HeaderWriterFilter@3c1d4b60, org.springframework.security.web.authentication.logout.LogoutFilter@2c03f970, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2fc3946b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4602635d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2275561a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7e72fd1c, org.springframework.security.web.access.ExceptionTranslationFilter@53a6f6b9, org.springframework.security.web.access.intercept.AuthorizationFilter@71033383]
+2025-04-24T14:18:57.076-05:00  INFO 22068 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-24T14:18:57.109-05:00  INFO 22068 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-04-24T14:18:57.116-05:00  INFO 22068 --- [restartedMain] com.ecom.ShoppingCartApplication         : Started ShoppingCartApplication in 3.828 seconds (process running for 912.804)
+2025-04-24T14:18:57.118-05:00  INFO 22068 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-04-24T14:20:04.869-05:00  INFO 3260 --- [restartedMain] com.ecom.ShoppingCartApplication         : Starting ShoppingCartApplication using Java 21.0.5 with PID 3260 (C:\Users\prudh\Desktop\ecommerce-main\target\classes started by prudh in C:\Users\prudh\Desktop\ecommerce-main)
+2025-04-24T14:20:04.872-05:00 DEBUG 3260 --- [restartedMain] com.ecom.ShoppingCartApplication         : Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-04-24T14:20:04.873-05:00  INFO 3260 --- [restartedMain] com.ecom.ShoppingCartApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-04-24T14:20:04.950-05:00  INFO 3260 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-24T14:20:04.950-05:00  INFO 3260 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-24T14:20:06.823-05:00  INFO 3260 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T14:20:06.952-05:00  INFO 3260 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 116 ms. Found 8 JPA repository interfaces.
+2025-04-24T14:20:07.863-05:00  INFO 3260 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T14:20:07.889-05:00  INFO 3260 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T14:20:07.890-05:00  INFO 3260 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-04-24T14:20:07.997-05:00  INFO 3260 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T14:20:07.997-05:00  INFO 3260 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3046 ms
+2025-04-24T14:20:08.249-05:00  INFO 3260 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T14:20:08.365-05:00  INFO 3260 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-04-24T14:20:08.440-05:00  INFO 3260 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T14:20:08.868-05:00  INFO 3260 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T14:20:08.933-05:00  INFO 3260 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-24T14:20:09.472-05:00  INFO 3260 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4df24d6b
+2025-04-24T14:20:09.475-05:00  INFO 3260 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-24T14:20:09.584-05:00  WARN 3260 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T14:20:09.586-05:00  WARN 3260 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T14:20:11.505-05:00  INFO 3260 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T14:20:11.753-05:00  INFO 3260 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:20:12.492-05:00  INFO 3260 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-24T14:20:13.478-05:00  WARN 3260 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T14:20:13.638-05:00  INFO 3260 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-24T14:20:13.926-05:00  INFO 3260 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3447a728, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@350f24d, org.springframework.security.web.context.SecurityContextHolderFilter@40625675, org.springframework.security.web.header.HeaderWriterFilter@71648823, org.springframework.security.web.authentication.logout.LogoutFilter@4f2410c8, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@a199ca8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@54352f64, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7af4598f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@45ead253, org.springframework.security.web.access.ExceptionTranslationFilter@84b51c7, org.springframework.security.web.access.intercept.AuthorizationFilter@533c839e]
+2025-04-24T14:20:14.379-05:00  INFO 3260 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-24T14:20:14.457-05:00  INFO 3260 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-04-24T14:20:14.475-05:00  INFO 3260 --- [restartedMain] com.ecom.ShoppingCartApplication         : Started ShoppingCartApplication in 10.2 seconds (process running for 11.337)
+2025-04-24T14:20:18.265-05:00  INFO 3260 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-24T14:20:18.265-05:00  INFO 3260 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-24T14:20:18.270-05:00  INFO 3260 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-04-24T14:20:26.656-05:00  INFO 3260 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:20:26.656-05:00  INFO 3260 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:20:26.656-05:00  INFO 3260 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:20:26.656-05:00  INFO 3260 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:20:26.656-05:00  INFO 3260 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:20:26.656-05:00  INFO 3260 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:20:26.656-05:00  INFO 3260 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:20:26.656-05:00  INFO 3260 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:20:26.656-05:00  INFO 3260 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:20:26.656-05:00  INFO 3260 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:20:26.656-05:00  INFO 3260 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:20:26.656-05:00  INFO 3260 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:20:26.656-05:00  INFO 3260 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:20:26.656-05:00  INFO 3260 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:20:26.656-05:00  INFO 3260 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:20:26.666-05:00  INFO 3260 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:20:26.666-05:00  INFO 3260 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:20:26.667-05:00  INFO 3260 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:20:26.667-05:00  INFO 3260 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:20:26.667-05:00  INFO 3260 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:20:29.531-05:00  INFO 3260 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:20:29.531-05:00  INFO 3260 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:20:29.531-05:00  INFO 3260 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:20:29.534-05:00  INFO 3260 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:20:29.534-05:00  INFO 3260 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:20:31.098-05:00  INFO 3260 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:20:31.103-05:00  INFO 3260 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:20:31.103-05:00  INFO 3260 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:20:31.103-05:00  INFO 3260 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:20:31.103-05:00  INFO 3260 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:21:06.658-05:00  INFO 3260 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-04-24T14:21:06.736-05:00  INFO 3260 --- [RMI TCP Connection(3)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:21:06.768-05:00  INFO 3260 --- [RMI TCP Connection(3)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-24T14:21:06.864-05:00  INFO 3260 --- [RMI TCP Connection(3)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-24T14:21:53.610-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Starting ShoppingCartApplication using Java 21.0.5 with PID 9516 (C:\Users\prudh\Desktop\ecommerce-main\target\classes started by prudh in C:\Users\prudh\Desktop\ecommerce-main)
+2025-04-24T14:21:53.614-05:00 DEBUG 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-04-24T14:21:53.615-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-04-24T14:21:53.711-05:00  INFO 9516 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-24T14:21:53.711-05:00  INFO 9516 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-24T14:21:55.170-05:00  INFO 9516 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T14:21:55.318-05:00  INFO 9516 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 131 ms. Found 8 JPA repository interfaces.
+2025-04-24T14:21:56.355-05:00  INFO 9516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T14:21:56.381-05:00  INFO 9516 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T14:21:56.382-05:00  INFO 9516 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-04-24T14:21:56.462-05:00  INFO 9516 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T14:21:56.462-05:00  INFO 9516 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2749 ms
+2025-04-24T14:21:56.783-05:00  INFO 9516 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T14:21:56.923-05:00  INFO 9516 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-04-24T14:21:56.999-05:00  INFO 9516 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T14:21:57.461-05:00  INFO 9516 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T14:21:57.513-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-24T14:21:58.149-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@13096740
+2025-04-24T14:21:58.153-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-24T14:21:58.320-05:00  WARN 9516 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T14:21:58.322-05:00  WARN 9516 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T14:22:00.199-05:00  INFO 9516 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T14:22:00.605-05:00  INFO 9516 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:22:01.424-05:00  INFO 9516 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-24T14:22:02.606-05:00  WARN 9516 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T14:22:02.844-05:00  INFO 9516 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-24T14:22:03.195-05:00  INFO 9516 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@70b53928, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7cfa1583, org.springframework.security.web.context.SecurityContextHolderFilter@1bf22f6c, org.springframework.security.web.header.HeaderWriterFilter@21164782, org.springframework.security.web.authentication.logout.LogoutFilter@5f416f15, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2f047bdd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4c24bbfe, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@71648823, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@702c5352, org.springframework.security.web.access.ExceptionTranslationFilter@6a7b9497, org.springframework.security.web.access.intercept.AuthorizationFilter@4049914c]
+2025-04-24T14:22:03.738-05:00  INFO 9516 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-24T14:22:03.803-05:00  INFO 9516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-04-24T14:22:03.817-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Started ShoppingCartApplication in 10.999 seconds (process running for 12.446)
+2025-04-24T14:22:08.227-05:00  INFO 9516 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-24T14:22:08.228-05:00  INFO 9516 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-24T14:22:08.231-05:00  INFO 9516 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-04-24T14:22:18.167-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:22:18.167-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:22:18.167-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:22:18.167-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:22:18.167-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:22:18.167-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:22:18.167-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:22:18.167-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:22:18.177-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:22:18.177-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:22:18.177-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:22:18.177-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:22:18.177-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:22:18.177-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:22:18.177-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:22:18.177-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:22:18.183-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:22:18.183-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:22:18.183-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:22:18.183-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:22:21.510-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:22:21.510-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:22:21.510-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:22:21.516-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:22:21.517-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:22:23.167-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:22:23.167-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:22:23.167-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:22:23.167-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:22:23.167-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:23:36.888-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:23:36.890-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:23:36.891-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:23:36.891-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:23:36.891-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:23:36.891-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:23:36.891-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:23:36.891-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:23:36.891-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:23:36.891-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:23:36.891-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:23:36.892-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:23:36.892-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:23:36.892-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:23:36.892-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:23:36.892-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:23:36.892-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:23:36.892-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:23:36.892-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:23:36.893-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:23:51.221-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:23:51.223-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:23:51.223-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:23:51.225-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:23:51.225-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:23:51.226-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:23:51.227-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:23:51.227-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:23:51.227-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:23:51.227-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:23:51.227-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:23:51.227-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:23:51.227-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:23:51.227-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:23:51.227-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:23:51.230-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:23:51.230-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:23:51.230-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:23:51.230-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:23:51.230-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:23:53.129-05:00  INFO 9516 --- [http-nio-8080-exec-5] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:23:53.134-05:00  INFO 9516 --- [http-nio-8080-exec-5] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:23:53.134-05:00  INFO 9516 --- [http-nio-8080-exec-5] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:23:53.134-05:00  INFO 9516 --- [http-nio-8080-exec-5] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:23:53.134-05:00  INFO 9516 --- [http-nio-8080-exec-5] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:23:54.405-05:00  INFO 9516 --- [http-nio-8080-exec-8] com.ecom.controller.UserController       : Adding product to cart: productId=1, userId=3, quantity=1
+2025-04-24T14:23:54.422-05:00  INFO 9516 --- [http-nio-8080-exec-8] com.ecom.controller.UserController       : Cart items for user 3: []
+2025-04-24T14:23:54.433-05:00  INFO 9516 --- [http-nio-8080-exec-8] com.ecom.controller.UserController       : Existing quantity for productId 1: 0
+2025-04-24T14:23:54.433-05:00  INFO 9516 --- [http-nio-8080-exec-8] com.ecom.controller.UserController       : Total quantity for productId 1: 1
+2025-04-24T14:23:54.433-05:00  INFO 9516 --- [http-nio-8080-exec-8] com.ecom.service.OrderItemLimitService   : Fetching active limits for productId: 1
+2025-04-24T14:23:54.481-05:00  INFO 9516 --- [http-nio-8080-exec-8] com.ecom.service.OrderItemLimitService   : Found 0 active limits for productId 1: []
+2025-04-24T14:23:54.481-05:00  INFO 9516 --- [http-nio-8080-exec-8] com.ecom.controller.UserController       : Active limits for productId 1: []
+2025-04-24T14:23:54.481-05:00  INFO 9516 --- [http-nio-8080-exec-8] com.ecom.controller.UserController       : No active limits found for productId 1. Allowing addition to cart.
+2025-04-24T14:23:54.507-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:23:54.507-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:23:54.507-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:23:54.507-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:23:54.507-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:23:54.590-05:00  INFO 9516 --- [http-nio-8080-exec-8] com.ecom.controller.UserController       : Cart save result: Cart{id=22, productId=com.ecom.model.Product@5824c168, userId=com.ecom.model.UserDtls@3b00f132, quantity=1, totalOrderPrice=null}
+2025-04-24T14:23:54.598-05:00  INFO 9516 --- [http-nio-8080-exec-8] com.ecom.controller.UserController       : Successfully added productId 1 to cart for userId 3
+2025-04-24T14:23:54.672-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:23:54.672-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:23:54.672-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:23:54.676-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:23:54.676-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:23:57.019-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:23:57.022-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:23:57.022-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:23:57.022-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:23:57.022-05:00  INFO 9516 --- [http-nio-8080-exec-4] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:23:58.365-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:23:58.365-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:23:58.365-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:23:58.365-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:23:58.365-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:25:42.959-05:00  INFO 9516 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-24T14:25:43.033-05:00  INFO 9516 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:25:43.055-05:00  INFO 9516 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-24T14:25:43.104-05:00  INFO 9516 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-24T14:25:43.460-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Starting ShoppingCartApplication using Java 21.0.5 with PID 9516 (C:\Users\prudh\Desktop\ecommerce-main\target\classes started by prudh in C:\Users\prudh\Desktop\ecommerce-main)
+2025-04-24T14:25:43.460-05:00 DEBUG 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-04-24T14:25:43.461-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-04-24T14:25:44.216-05:00  INFO 9516 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T14:25:44.298-05:00  INFO 9516 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81 ms. Found 8 JPA repository interfaces.
+2025-04-24T14:25:44.600-05:00  INFO 9516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T14:25:44.603-05:00  INFO 9516 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T14:25:44.603-05:00  INFO 9516 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-04-24T14:25:44.634-05:00  INFO 9516 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T14:25:44.634-05:00  INFO 9516 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1165 ms
+2025-04-24T14:25:44.731-05:00  INFO 9516 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T14:25:44.739-05:00  INFO 9516 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T14:25:44.754-05:00  INFO 9516 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T14:25:44.758-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-04-24T14:25:44.966-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2d903010
+2025-04-24T14:25:44.968-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-04-24T14:25:44.970-05:00  WARN 9516 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T14:25:44.970-05:00  WARN 9516 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T14:25:45.356-05:00  INFO 9516 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T14:25:45.638-05:00  INFO 9516 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:25:46.148-05:00  WARN 9516 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T14:25:46.195-05:00  INFO 9516 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-24T14:25:46.316-05:00  INFO 9516 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@f350149, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@28890759, org.springframework.security.web.context.SecurityContextHolderFilter@38f5012c, org.springframework.security.web.header.HeaderWriterFilter@60c0a866, org.springframework.security.web.authentication.logout.LogoutFilter@51fdd8e5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@30b0cd4a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7e09471f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@247742fa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@66d4dbaf, org.springframework.security.web.access.ExceptionTranslationFilter@7d54ee1a, org.springframework.security.web.access.intercept.AuthorizationFilter@7b06b2bd]
+2025-04-24T14:25:46.487-05:00  INFO 9516 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-24T14:25:46.515-05:00  INFO 9516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-04-24T14:25:46.523-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Started ShoppingCartApplication in 3.183 seconds (process running for 235.153)
+2025-04-24T14:25:46.529-05:00  INFO 9516 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-04-24T14:25:46.550-05:00  INFO 9516 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-24T14:25:46.551-05:00  INFO 9516 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-24T14:25:46.552-05:00  INFO 9516 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-24T14:25:47.976-05:00  INFO 9516 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 3 class path changes (0 additions, 0 deletions, 3 modifications)
+2025-04-24T14:25:47.991-05:00  INFO 9516 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:25:47.991-05:00  INFO 9516 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-04-24T14:25:48.003-05:00  INFO 9516 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-04-24T14:25:48.257-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Starting ShoppingCartApplication using Java 21.0.5 with PID 9516 (C:\Users\prudh\Desktop\ecommerce-main\target\classes started by prudh in C:\Users\prudh\Desktop\ecommerce-main)
+2025-04-24T14:25:48.261-05:00 DEBUG 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-04-24T14:25:48.261-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-04-24T14:25:48.999-05:00  INFO 9516 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T14:25:49.103-05:00  INFO 9516 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 107 ms. Found 8 JPA repository interfaces.
+2025-04-24T14:25:49.619-05:00  INFO 9516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T14:25:49.631-05:00  INFO 9516 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T14:25:49.631-05:00  INFO 9516 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-04-24T14:25:49.729-05:00  INFO 9516 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T14:25:49.729-05:00  INFO 9516 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1462 ms
+2025-04-24T14:25:49.954-05:00  INFO 9516 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T14:25:49.962-05:00  INFO 9516 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T14:25:49.973-05:00  INFO 9516 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T14:25:49.977-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2025-04-24T14:25:50.014-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c56d02d
+2025-04-24T14:25:50.014-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2025-04-24T14:25:50.017-05:00  WARN 9516 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T14:25:50.017-05:00  WARN 9516 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T14:25:50.498-05:00  INFO 9516 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T14:25:50.706-05:00  INFO 9516 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:25:52.392-05:00  WARN 9516 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T14:25:52.489-05:00  INFO 9516 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-24T14:25:52.804-05:00  INFO 9516 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@35a1d81, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@685f20cc, org.springframework.security.web.context.SecurityContextHolderFilter@65eb4733, org.springframework.security.web.header.HeaderWriterFilter@1ffb03e5, org.springframework.security.web.authentication.logout.LogoutFilter@26f71b8b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1def66f4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@79836464, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5e39d15d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f622611, org.springframework.security.web.access.ExceptionTranslationFilter@1a4c73e, org.springframework.security.web.access.intercept.AuthorizationFilter@54166987]
+2025-04-24T14:25:53.173-05:00  INFO 9516 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-24T14:25:53.254-05:00  INFO 9516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-04-24T14:25:53.271-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Started ShoppingCartApplication in 5.107 seconds (process running for 241.904)
+2025-04-24T14:25:53.279-05:00  INFO 9516 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-04-24T14:25:53.329-05:00  INFO 9516 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-24T14:25:53.329-05:00  INFO 9516 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-24T14:25:53.329-05:00  INFO 9516 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-04-24T14:25:54.693-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:25:54.693-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:25:54.700-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:25:54.700-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:25:54.700-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:25:54.700-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:25:54.700-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:25:54.701-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:25:54.701-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:25:54.701-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:25:54.701-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:25:54.701-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:25:54.701-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:25:54.701-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:25:54.701-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:25:54.705-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:25:54.705-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:25:54.705-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:25:54.705-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:25:54.705-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:25:56.812-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:25:56.812-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:25:56.812-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:25:56.812-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:25:56.812-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:25:58.525-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:25:58.527-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:25:58.527-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:25:58.527-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:25:58.527-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:31:18.371-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:31:18.381-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:31:18.384-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:31:18.385-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:31:18.385-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:31:31.937-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:31:31.937-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:31:31.937-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:31:31.947-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:31:31.947-05:00  INFO 9516 --- [http-nio-8080-exec-8] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:31:33.679-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:31:33.679-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:31:33.679-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:31:33.682-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:31:33.682-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:33:26.869-05:00  INFO 9516 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2025-04-24T14:33:26.996-05:00  INFO 9516 --- [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:33:27.018-05:00  INFO 9516 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2025-04-24T14:33:27.064-05:00  INFO 9516 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2025-04-24T14:33:27.478-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Starting ShoppingCartApplication using Java 21.0.5 with PID 9516 (C:\Users\prudh\Desktop\ecommerce-main\target\classes started by prudh in C:\Users\prudh\Desktop\ecommerce-main)
+2025-04-24T14:33:27.478-05:00 DEBUG 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-04-24T14:33:27.478-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-04-24T14:33:27.946-05:00  INFO 9516 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T14:33:28.016-05:00  INFO 9516 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 8 JPA repository interfaces.
+2025-04-24T14:33:28.306-05:00  INFO 9516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T14:33:28.311-05:00  INFO 9516 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T14:33:28.312-05:00  INFO 9516 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-04-24T14:33:28.349-05:00  INFO 9516 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T14:33:28.349-05:00  INFO 9516 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 865 ms
+2025-04-24T14:33:28.442-05:00  INFO 9516 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T14:33:28.449-05:00  INFO 9516 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T14:33:28.459-05:00  INFO 9516 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T14:33:28.463-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2025-04-24T14:33:28.600-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1abe8b7c
+2025-04-24T14:33:28.601-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2025-04-24T14:33:28.603-05:00  WARN 9516 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T14:33:28.603-05:00  WARN 9516 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T14:33:28.932-05:00  INFO 9516 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T14:33:29.316-05:00  INFO 9516 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:33:29.739-05:00  WARN 9516 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T14:33:29.779-05:00  INFO 9516 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-24T14:33:29.898-05:00  INFO 9516 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@609df19c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@26da85e8, org.springframework.security.web.context.SecurityContextHolderFilter@71b52eca, org.springframework.security.web.header.HeaderWriterFilter@7c322fd0, org.springframework.security.web.authentication.logout.LogoutFilter@72eb419e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4852beb9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@147980e5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@475112f1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6558f02f, org.springframework.security.web.access.ExceptionTranslationFilter@50206b70, org.springframework.security.web.access.intercept.AuthorizationFilter@6544d0ac]
+2025-04-24T14:33:30.040-05:00  INFO 9516 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-24T14:33:30.061-05:00  INFO 9516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-04-24T14:33:30.068-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Started ShoppingCartApplication in 2.654 seconds (process running for 698.696)
+2025-04-24T14:33:30.069-05:00  INFO 9516 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-04-24T14:35:58.378-05:00  INFO 9516 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-24T14:35:58.425-05:00  INFO 9516 --- [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:35:58.432-05:00  INFO 9516 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2025-04-24T14:35:58.453-05:00  INFO 9516 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2025-04-24T14:35:58.722-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Starting ShoppingCartApplication using Java 21.0.5 with PID 9516 (C:\Users\prudh\Desktop\ecommerce-main\target\classes started by prudh in C:\Users\prudh\Desktop\ecommerce-main)
+2025-04-24T14:35:58.723-05:00 DEBUG 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-04-24T14:35:58.723-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-04-24T14:35:59.591-05:00  INFO 9516 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T14:35:59.643-05:00  INFO 9516 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 8 JPA repository interfaces.
+2025-04-24T14:35:59.812-05:00  INFO 9516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T14:35:59.814-05:00  INFO 9516 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T14:35:59.815-05:00  INFO 9516 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-04-24T14:35:59.842-05:00  INFO 9516 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T14:35:59.842-05:00  INFO 9516 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1116 ms
+2025-04-24T14:35:59.897-05:00  INFO 9516 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T14:35:59.900-05:00  INFO 9516 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T14:35:59.905-05:00  INFO 9516 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T14:35:59.906-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2025-04-24T14:35:59.977-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@a115df7
+2025-04-24T14:35:59.978-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2025-04-24T14:35:59.979-05:00  WARN 9516 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T14:35:59.979-05:00  WARN 9516 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T14:36:00.186-05:00  INFO 9516 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T14:36:00.461-05:00  INFO 9516 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:36:00.869-05:00  WARN 9516 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T14:36:00.893-05:00  INFO 9516 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-24T14:36:00.968-05:00  INFO 9516 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@68590a0a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2a864e9b, org.springframework.security.web.context.SecurityContextHolderFilter@61e685ef, org.springframework.security.web.header.HeaderWriterFilter@2c9ca7f0, org.springframework.security.web.authentication.logout.LogoutFilter@431ca3e4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@b21aaed, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7a812c82, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5fea0a0c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2677d91e, org.springframework.security.web.access.ExceptionTranslationFilter@1cb72f39, org.springframework.security.web.access.intercept.AuthorizationFilter@2d843f3a]
+2025-04-24T14:36:01.077-05:00  INFO 9516 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-24T14:36:01.101-05:00  INFO 9516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-04-24T14:36:01.106-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Started ShoppingCartApplication in 2.43 seconds (process running for 849.735)
+2025-04-24T14:36:01.108-05:00  INFO 9516 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-04-24T14:36:08.849-05:00  INFO 9516 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-24T14:36:08.868-05:00  INFO 9516 --- [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:36:08.868-05:00  INFO 9516 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2025-04-24T14:36:08.880-05:00  INFO 9516 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2025-04-24T14:36:09.007-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Starting ShoppingCartApplication using Java 21.0.5 with PID 9516 (C:\Users\prudh\Desktop\ecommerce-main\target\classes started by prudh in C:\Users\prudh\Desktop\ecommerce-main)
+2025-04-24T14:36:09.008-05:00 DEBUG 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-04-24T14:36:09.008-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-04-24T14:36:09.281-05:00  INFO 9516 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T14:36:09.317-05:00  INFO 9516 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 8 JPA repository interfaces.
+2025-04-24T14:36:09.435-05:00  INFO 9516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T14:36:09.436-05:00  INFO 9516 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T14:36:09.437-05:00  INFO 9516 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-04-24T14:36:09.463-05:00  INFO 9516 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T14:36:09.464-05:00  INFO 9516 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 454 ms
+2025-04-24T14:36:09.512-05:00  INFO 9516 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T14:36:09.516-05:00  INFO 9516 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T14:36:09.520-05:00  INFO 9516 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T14:36:09.521-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2025-04-24T14:36:09.543-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@51922755
+2025-04-24T14:36:09.543-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2025-04-24T14:36:09.544-05:00  WARN 9516 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T14:36:09.544-05:00  WARN 9516 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T14:36:09.720-05:00  INFO 9516 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T14:36:09.883-05:00  INFO 9516 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:36:10.237-05:00  WARN 9516 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T14:36:10.267-05:00  INFO 9516 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-24T14:36:10.332-05:00  INFO 9516 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@51e7f8ac, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5c3321c6, org.springframework.security.web.context.SecurityContextHolderFilter@7a2cc7eb, org.springframework.security.web.header.HeaderWriterFilter@470619ab, org.springframework.security.web.authentication.logout.LogoutFilter@57fc7c86, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@65cba0df, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@29e1067b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3c4f74ef, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69a1fdde, org.springframework.security.web.access.ExceptionTranslationFilter@765c6ce4, org.springframework.security.web.access.intercept.AuthorizationFilter@312090fe]
+2025-04-24T14:36:10.429-05:00  INFO 9516 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-24T14:36:10.453-05:00  INFO 9516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-04-24T14:36:10.457-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Started ShoppingCartApplication in 1.486 seconds (process running for 859.085)
+2025-04-24T14:36:10.459-05:00  INFO 9516 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-04-24T14:36:12.984-05:00  INFO 9516 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-24T14:36:12.995-05:00  INFO 9516 --- [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:36:12.996-05:00  INFO 9516 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2025-04-24T14:36:13.007-05:00  INFO 9516 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2025-04-24T14:36:13.133-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Starting ShoppingCartApplication using Java 21.0.5 with PID 9516 (C:\Users\prudh\Desktop\ecommerce-main\target\classes started by prudh in C:\Users\prudh\Desktop\ecommerce-main)
+2025-04-24T14:36:13.134-05:00 DEBUG 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-04-24T14:36:13.134-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-04-24T14:36:13.397-05:00  INFO 9516 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T14:36:13.431-05:00  INFO 9516 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 8 JPA repository interfaces.
+2025-04-24T14:36:13.574-05:00  INFO 9516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T14:36:13.575-05:00  INFO 9516 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T14:36:13.575-05:00  INFO 9516 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-04-24T14:36:13.606-05:00  INFO 9516 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T14:36:13.606-05:00  INFO 9516 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 470 ms
+2025-04-24T14:36:13.661-05:00  INFO 9516 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T14:36:13.664-05:00  INFO 9516 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T14:36:13.669-05:00  INFO 9516 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T14:36:13.670-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2025-04-24T14:36:13.691-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@127a30df
+2025-04-24T14:36:13.691-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2025-04-24T14:36:13.692-05:00  WARN 9516 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T14:36:13.692-05:00  WARN 9516 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T14:36:13.827-05:00  INFO 9516 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T14:36:13.984-05:00  INFO 9516 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:36:14.366-05:00  WARN 9516 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T14:36:14.386-05:00  INFO 9516 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-24T14:36:14.467-05:00  INFO 9516 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@326dac2d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7c1bd2ef, org.springframework.security.web.context.SecurityContextHolderFilter@ba8faac, org.springframework.security.web.header.HeaderWriterFilter@aa8cf88, org.springframework.security.web.authentication.logout.LogoutFilter@504af80c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3560b815, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@60316dcf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@50e34dae, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5de1825b, org.springframework.security.web.access.ExceptionTranslationFilter@85716b9, org.springframework.security.web.access.intercept.AuthorizationFilter@713a0c23]
+2025-04-24T14:36:14.569-05:00  INFO 9516 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-24T14:36:14.590-05:00  INFO 9516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-04-24T14:36:14.595-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Started ShoppingCartApplication in 1.494 seconds (process running for 863.224)
+2025-04-24T14:36:14.598-05:00  INFO 9516 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-04-24T14:36:17.103-05:00  INFO 9516 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-24T14:36:17.121-05:00  INFO 9516 --- [Thread-27] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:36:17.122-05:00  INFO 9516 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2025-04-24T14:36:17.131-05:00  INFO 9516 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2025-04-24T14:36:17.291-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Starting ShoppingCartApplication using Java 21.0.5 with PID 9516 (C:\Users\prudh\Desktop\ecommerce-main\target\classes started by prudh in C:\Users\prudh\Desktop\ecommerce-main)
+2025-04-24T14:36:17.291-05:00 DEBUG 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-04-24T14:36:17.292-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-04-24T14:36:17.554-05:00  INFO 9516 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T14:36:17.591-05:00  INFO 9516 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 8 JPA repository interfaces.
+2025-04-24T14:36:17.724-05:00  INFO 9516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T14:36:17.725-05:00  INFO 9516 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T14:36:17.726-05:00  INFO 9516 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-04-24T14:36:17.748-05:00  INFO 9516 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T14:36:17.749-05:00  INFO 9516 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 453 ms
+2025-04-24T14:36:17.793-05:00  INFO 9516 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T14:36:17.796-05:00  INFO 9516 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T14:36:17.802-05:00  INFO 9516 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T14:36:17.804-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2025-04-24T14:36:17.828-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-8 - Added connection com.mysql.cj.jdbc.ConnectionImpl@12e62883
+2025-04-24T14:36:17.829-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2025-04-24T14:36:17.830-05:00  WARN 9516 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T14:36:17.830-05:00  WARN 9516 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T14:36:17.955-05:00  INFO 9516 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T14:36:18.134-05:00  INFO 9516 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:36:18.517-05:00  WARN 9516 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T14:36:18.536-05:00  INFO 9516 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-24T14:36:18.602-05:00  INFO 9516 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1c4c65bf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@37bab97b, org.springframework.security.web.context.SecurityContextHolderFilter@51fdc39a, org.springframework.security.web.header.HeaderWriterFilter@21f84c06, org.springframework.security.web.authentication.logout.LogoutFilter@33af25d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4830cefe, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6bf396bb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5f9ff8c1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@716503d6, org.springframework.security.web.access.ExceptionTranslationFilter@1ec543bf, org.springframework.security.web.access.intercept.AuthorizationFilter@54f24d6f]
+2025-04-24T14:36:18.712-05:00  INFO 9516 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-24T14:36:18.731-05:00  INFO 9516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-04-24T14:36:18.735-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Started ShoppingCartApplication in 1.476 seconds (process running for 867.364)
+2025-04-24T14:36:18.737-05:00  INFO 9516 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-04-24T14:36:41.545-05:00  INFO 9516 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-24T14:36:41.546-05:00  INFO 9516 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-24T14:36:41.552-05:00  INFO 9516 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2025-04-24T14:36:49.623-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:36:49.623-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:36:49.625-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:36:49.625-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:36:49.625-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:36:49.625-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:36:49.625-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:36:49.625-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:36:49.625-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:36:49.627-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:36:49.627-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:36:49.627-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:36:49.627-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:36:49.627-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:36:49.627-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:36:49.629-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:36:49.629-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:36:49.629-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:36:49.629-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:36:49.629-05:00  INFO 9516 --- [http-nio-8080-exec-7] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:36:55.245-05:00  INFO 9516 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:36:55.245-05:00  INFO 9516 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:36:55.247-05:00  INFO 9516 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:36:55.247-05:00  INFO 9516 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:36:55.247-05:00  INFO 9516 --- [http-nio-8080-exec-1] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:36:57.047-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:36:57.047-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:36:57.047-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:36:57.047-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:36:57.047-05:00  INFO 9516 --- [http-nio-8080-exec-2] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:41:10.124-05:00  INFO 9516 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-24T14:41:10.326-05:00  INFO 9516 --- [Thread-31] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:41:10.372-05:00  INFO 9516 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2025-04-24T14:41:10.454-05:00  INFO 9516 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2025-04-24T14:41:11.350-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Starting ShoppingCartApplication using Java 21.0.5 with PID 9516 (C:\Users\prudh\Desktop\ecommerce-main\target\classes started by prudh in C:\Users\prudh\Desktop\ecommerce-main)
+2025-04-24T14:41:11.350-05:00 DEBUG 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-04-24T14:41:11.352-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-04-24T14:41:12.344-05:00  INFO 9516 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T14:41:12.410-05:00  INFO 9516 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 8 JPA repository interfaces.
+2025-04-24T14:41:12.673-05:00  INFO 9516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T14:41:12.682-05:00  INFO 9516 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T14:41:12.683-05:00  INFO 9516 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-04-24T14:41:12.745-05:00  INFO 9516 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T14:41:12.745-05:00  INFO 9516 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1388 ms
+2025-04-24T14:41:12.914-05:00  INFO 9516 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T14:41:12.924-05:00  INFO 9516 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T14:41:12.949-05:00  INFO 9516 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T14:41:12.954-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Starting...
+2025-04-24T14:41:13.255-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-9 - Added connection com.mysql.cj.jdbc.ConnectionImpl@aa42ac8
+2025-04-24T14:41:13.257-05:00  INFO 9516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Start completed.
+2025-04-24T14:41:13.267-05:00  WARN 9516 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T14:41:13.267-05:00  WARN 9516 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T14:41:13.646-05:00  INFO 9516 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T14:41:13.947-05:00  INFO 9516 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:41:14.465-05:00  WARN 9516 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T14:41:14.497-05:00  INFO 9516 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-24T14:41:14.577-05:00  INFO 9516 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@52f4affd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ea4dc76, org.springframework.security.web.context.SecurityContextHolderFilter@42d58f11, org.springframework.security.web.header.HeaderWriterFilter@5413ab8c, org.springframework.security.web.authentication.logout.LogoutFilter@65149549, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@138bce18, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1f1283a8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@42d1a228, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@64b5aa90, org.springframework.security.web.access.ExceptionTranslationFilter@1ff84cde, org.springframework.security.web.access.intercept.AuthorizationFilter@219f6a98]
+2025-04-24T14:41:14.709-05:00  INFO 9516 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-24T14:41:14.751-05:00  INFO 9516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-04-24T14:41:14.759-05:00  INFO 9516 --- [restartedMain] com.ecom.ShoppingCartApplication         : Started ShoppingCartApplication in 3.492 seconds (process running for 1163.387)
+2025-04-24T14:41:14.761-05:00  INFO 9516 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-04-24T14:41:23.177-05:00  INFO 9516 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-24T14:41:23.177-05:00  INFO 9516 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-24T14:41:23.180-05:00  INFO 9516 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-04-24T14:41:31.869-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:41:31.869-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:41:31.877-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:41:31.877-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:41:31.877-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:41:31.877-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:41:31.877-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:41:31.877-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:41:31.877-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:41:31.877-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:41:31.877-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:41:31.877-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:41:31.877-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:41:31.877-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:41:31.877-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:41:31.877-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:41:31.882-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:41:31.882-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:41:31.882-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:41:31.882-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:41:35.647-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:41:35.647-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:41:35.647-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:41:35.647-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:41:35.647-05:00  INFO 9516 --- [http-nio-8080-exec-9] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:41:37.323-05:00  INFO 9516 --- [http-nio-8080-exec-3] c.ecom.service.impl.ProductServiceImpl   : Checking sale status...
+2025-04-24T14:41:37.323-05:00  INFO 9516 --- [http-nio-8080-exec-3] c.ecom.service.impl.ProductServiceImpl   : sale.active: false
+2025-04-24T14:41:37.323-05:00  INFO 9516 --- [http-nio-8080-exec-3] c.ecom.service.impl.ProductServiceImpl   : sale.start: 2025-04-21
+2025-04-24T14:41:37.323-05:00  INFO 9516 --- [http-nio-8080-exec-3] c.ecom.service.impl.ProductServiceImpl   : sale.end: 2025-04-24
+2025-04-24T14:41:37.323-05:00  INFO 9516 --- [http-nio-8080-exec-3] c.ecom.service.impl.ProductServiceImpl   : Sale is not active because sale.active is false
+2025-04-24T14:43:52.095-05:00  INFO 9516 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-24T14:43:52.177-05:00  INFO 9516 --- [Thread-35] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T14:43:52.207-05:00  INFO 9516 --- [Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2025-04-24T14:43:52.258-05:00  INFO 9516 --- [Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.

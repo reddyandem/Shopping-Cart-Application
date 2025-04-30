@@ -13,4 +13,6 @@ public interface LoyaltyPointsService {
     void addPoints(UserDtls user, Double amountSpent);
     boolean redeemPoints(UserDtls user, Double pointsToRedeem);
     void deductPoints(Integer userId, double pointsToDeduct); 
+    
+    boolean isEligibleForRedemption(Integer userId, double minimumPoints);
 }

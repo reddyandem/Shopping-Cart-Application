@@ -26,6 +26,10 @@ public class ProductOrder {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
+	@ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private UserDtls user;
 
 	private String orderId;
 
@@ -118,8 +122,6 @@ public class ProductOrder {
 
 	private Integer quantity;
 
-	@ManyToOne
-	private UserDtls user;
 
 	private String status;
 

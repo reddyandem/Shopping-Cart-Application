@@ -26,12 +26,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ecom.model.Category;
 import com.ecom.model.OrderItemLimit;
 import com.ecom.model.Product;
 import com.ecom.model.ProductOrder;
+import com.ecom.model.Sale;
 import com.ecom.model.UserDtls;
 
 import com.ecom.service.CartService;
@@ -39,6 +40,7 @@ import com.ecom.service.CategoryService;
 import com.ecom.service.OrderItemLimitService;
 import com.ecom.service.OrderService;
 import com.ecom.service.ProductService;
+import com.ecom.service.SaleService;
 import com.ecom.service.UserService;
 import com.ecom.util.CommonUtil;
 import com.ecom.util.OrderStatus;
@@ -73,6 +75,8 @@ public class AdminController {
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
+	
+
 	
 
 
@@ -498,15 +502,63 @@ public class AdminController {
     }
 
     @PostMapping("/save-order-item-limit")
-    public String saveOrderItemLimit(@ModelAttribute OrderItemLimit limit, HttpServletRequest request) {
+    public String saveOrderItemLimit(@ModelAttribute OrderItemLimit limit, HttpServletRequest request,HttpSession session) {
     	System.out.println("Received isActive param: " + request.getParameter("isActive"));
     	boolean boolean2 = Boolean.parseBoolean(request.getParameter("isActive"));
     	
   
         limit.setActive(boolean2);
-        
+        if (orderItemLimitService.existsByProductId(limit.getProductId())) {
+            session.setAttribute("errorMsg", "Product ID already exists in the limit quantity");
+            return "redirect:/admin/orderitemlimits";
+        }
         orderItemLimitService.saveOrderItemLimit(limit);
         return "redirect:/admin/orderitemlimits";
     }
+    
+    
+    @GetMapping("/add-sale")
+    public String showAddSaleForm() {
+        return "admin/add_sale";
+    }
 
+    @PostMapping("/save-sale")
+    public String saveSale(@ModelAttribute Sale sale, RedirectAttributes redirectAttributes) {
+        //saleService.saveSale(sale);
+        redirectAttributes.addFlashAttribute("message", "Sale added successfully!");
+        return showAddSaleForm();
+    }
+    @GetMapping("/manage-discounts")
+    public String manageDiscounts(Model model, @RequestParam(defaultValue = "1") Integer type) {
+        logger.info("Loading user discount management page, type: {}", type);
+        String role = type == 1 ? "ROLE_USER" : "ROLE_ADMIN";
+        List<UserDtls> users = userService.getUsers(role);
+        model.addAttribute("users", users);
+        model.addAttribute("userType", type);
+        return "admin/manage_user_discounts";
+    }
+
+    @PostMapping("/update-discount")
+    public String updateDiscount(@RequestParam Integer userId, @RequestParam(required = false) Double discount,
+            @RequestParam Integer type, HttpSession session) {
+        logger.info("Updating discount for userId: {}, discount: {}, type: {}", userId, discount, type);
+        try {
+            if (discount != null && (discount < 0 || discount > 100)) {
+                logger.warn("Invalid discount value: {}", discount);
+                session.setAttribute("errorMsg", "Discount must be between 0 and 100");
+            } else {
+                userService.updateUserDiscount(userId, discount);
+                session.setAttribute("succMsg", "Discount updated successfully");
+            }
+        } catch (IllegalArgumentException e) {
+            logger.error("Failed to update discount for userId {}: {}", userId, e.getMessage());
+            session.setAttribute("errorMsg", "User not found");
+        } catch (Exception e) {
+            logger.error("Server error updating discount for userId {}: {}", userId, e.getMessage());
+            session.setAttribute("errorMsg", "Failed to update discount due to server error");
+        }
+        return "redirect:/admin/manage-discounts?type=" + type;
+    }
 }
+
+

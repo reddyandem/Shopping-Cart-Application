@@ -4,6 +4,9 @@ import java.security.Principal;
 import java.time.LocalDate;
 import java.util.List;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -72,8 +75,9 @@ public class UserController {
     private OrderNotificationServiceImpl orderNotificationServiceimpl;
     
     
-
-    // New method to trigger order notification manually (keeps existing saveOrder unchanged)
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
+    
+    // New method to trigger order notification manually 
     @GetMapping("/user/notify-order/{orderId}")
     public String triggerOrderNotification(@PathVariable Integer orderId, HttpSession session) {
     	session.setAttribute("orderId", orderId);
@@ -89,14 +93,15 @@ public class UserController {
 	@GetMapping("/checkout")
 	public String checkoutPage(@RequestParam Integer userId, Model model) {
 		List<LoyaltyPoints> pointsList = loyaltyPointService.getPointsByUserId(userId);
-	    
-	    // Check if the list has entries
+		boolean isEligibleForRedemption = loyaltyPointService.isEligibleForRedemption(userId, 2000.0);
+	    System.out.println("eligiblity: " + isEligibleForRedemption);
 	    double totalPoints = (pointsList != null && !pointsList.isEmpty()) 
 	                         ? pointsList.get(0).getTotalPoints() 
 	                         : 0.0;
-	    
+	    logger.info("eligible for redemption", isEligibleForRedemption);
 	    model.addAttribute("totalPoints", totalPoints);
 	    model.addAttribute("userId", userId);
+	    model.addAttribute("isEligibleForRedemption", isEligibleForRedemption);
 	    return "checkout";
 	}
 
@@ -113,84 +118,90 @@ public class UserController {
 		List<Category> allActiveCategory = categoryService.getAllActiveCategory();
 		m.addAttribute("categorys", allActiveCategory);
 	}
-
+	
 	@GetMapping("/addCart")
-	public String addToCart(@RequestParam Integer pid, @RequestParam Integer uid,@RequestParam(defaultValue = "1") int quantity, HttpSession session, Principal principal) {
-		//Cart saveCart = cartService.saveCart(pid, uid);
-		
-		Integer userId = (Integer) session.getAttribute("uid");
+	public String addToCart(@RequestParam Integer pid, @RequestParam Integer uid,
+	        @RequestParam(defaultValue = "1") int quantity, HttpSession session, Principal principal) {
+	    logger.info("Adding product to cart: productId={}, userId={}, quantity={}", pid, uid, quantity);
+
+	    Integer userId = (Integer) session.getAttribute("uid");
 	    if (userId == null && principal != null) {
 	        UserDtls user = getLoggedInUserDetails(principal);
 	        userId = user.getId();
 	    }
 	    if (userId == null) {
+	        logger.warn("User not logged in, redirecting to login");
 	        session.setAttribute("errorMsg", "Please log in to add items to your cart.");
 	        return "redirect:/login";
 	    }
 
-	    // Log the user ID being used
-	    System.out.println("User ID for cart retrieval: " + userId);
-
 	    // Fetch the current cart items for the user
 	    List<Cart> userCart = cartService.getCartsByUser(userId);
-	    System.out.println("Cart items for user " + userId + ": " + userCart);
-	    
-	 // Calculate the existing quantity of the product in the cart
+	    logger.info("Cart items for user {}: {}", userId, userCart);
+
+	    // Calculate the existing quantity of the product in the cart
 	    int existingQuantity = userCart.stream()
 	            .filter(cart -> {
-	            	Product product = cart.getProduct();
+	                Product product = cart.getProduct();
 	                Integer cartProductId = (product != null) ? product.getId() : null;
-	                Integer requestProductId = pid;
-	                boolean matches = cartProductId != null && requestProductId != null && cartProductId.intValue() == requestProductId.intValue();
-	                System.out.println("Comparing cart productId " + cartProductId + " with request productId " + requestProductId + ": " + matches);
+	                boolean matches = cartProductId != null && cartProductId.equals(pid);
+	                logger.debug("Comparing cart productId {} with request productId {}: {}", cartProductId, pid, matches);
 	                return matches;
 	            })
 	            .mapToInt(cart -> {
 	                Integer cartQuantity = cart.getQuantity();
 	                int qty = cartQuantity != null ? cartQuantity : 0;
-	                System.out.println("Cart item quantity for productId " + pid + ": " + qty);
+	                logger.debug("Cart item quantity for productId {}: {}", pid, qty);
 	                return qty;
 	            })
 	            .sum();
-	    System.out.println("existing quantity::" + existingQuantity );
-	    
+	    logger.info("Existing quantity for productId {}: {}", pid, existingQuantity);
+
 	    // Calculate the total quantity (existing + new)
 	    int totalQuantity = existingQuantity + quantity;
-	    System.out.println("Total quantity:: " + totalQuantity);
-	    
+	    logger.info("Total quantity for productId {}: {}", pid, totalQuantity);
+
 	    // Check item limit
 	    List<OrderItemLimit> activeLimits = orderItemLimitService.getActiveLimitByProductId(pid);
-	    System.out.println("Active limits for productId " + pid + ": " + activeLimits);
+	    logger.info("Active limits for productId {}: {}", pid, activeLimits);
+
 	    if (!activeLimits.isEmpty()) {
 	        LocalDate now = LocalDate.now();
-	        System.out.println("Current date: " + now);
+	        logger.info("Current date: {}", now);
+
 	        boolean isWithinLimit = activeLimits.stream().anyMatch(limit -> {
-	            boolean isActivePeriod = now.isAfter(limit.getStartDate()) && !now.isAfter(limit.getEndDate());
+	            boolean isActivePeriod = !now.isBefore(limit.getStartDate()) && !now.isAfter(limit.getEndDate());
 	            boolean isQuantityWithinLimit = totalQuantity <= limit.getLimitQuantity();
-	            System.out.println("Checking limit: " + limit + ", isActivePeriod: " + isActivePeriod + ", isQuantityWithinLimit: " + isQuantityWithinLimit);
+	            logger.info("Checking limit: {}, isActivePeriod: {}, isQuantityWithinLimit: {}", limit, isActivePeriod, isQuantityWithinLimit);
 	            return isActivePeriod && isQuantityWithinLimit;
 	        });
+
 	        if (!isWithinLimit) {
 	            int maxLimit = activeLimits.stream()
-	                    .filter(limit -> now.isAfter(limit.getStartDate()) && !now.isAfter(limit.getEndDate()))
 	                    .mapToInt(OrderItemLimit::getLimitQuantity)
 	                    .max()
 	                    .orElse(0);
-	            System.out.println("Existing quantity: " + existingQuantity + ", New quantity: " + quantity + ", Total: " + totalQuantity + ", Limit: " + maxLimit);
-	            session.setAttribute("errorMsg", "Limit reached: Only " + maxLimit + " items allowed per order for this product during this period.");
-	            return "redirect:/product/ "+pid;
+	            logger.info("Limit exceeded: existingQuantity={}, newQuantity={}, total={}, maxLimit={}",
+	                    existingQuantity, quantity, totalQuantity, maxLimit);
+	            session.setAttribute("errorMsg", "Limit reached: Only " + maxLimit + " items allowed for this product during the active period.");
+	            return "redirect:/product/" + pid;
 	        }
-        }
-	    
-	    Cart saveCart1 = cartService.saveCart(pid, userId);
-	    System.out.println("Cart save result: " + saveCart1);
-	    
-		if (ObjectUtils.isEmpty(saveCart1)) {
-			session.setAttribute("errorMsg", "Product add to cart failed");
-		} else {
-			session.setAttribute("succMsg", "Product added to cart");
-		}
-		return "redirect:/product/ "+pid;
+	    } else {
+	        logger.info("No active limits found for productId {}. Allowing addition to cart.", pid);
+	    }
+
+	    // Save to cart
+	    Cart saveCart = cartService.saveCart(pid, userId);
+	    logger.info("Cart save result: {}", saveCart);
+	    if (ObjectUtils.isEmpty(saveCart)) {
+	        logger.error("Failed to add productId {} to cart for userId {}", pid, userId);
+	        session.setAttribute("errorMsg", "Product add to cart failed");
+	    } else {
+	        logger.info("Successfully added productId {} to cart for userId {}", pid, userId);
+	        session.setAttribute("succMsg", "Product added to cart");
+	    }
+
+	    return "redirect:/product/" + pid;
 	}
 
 	@GetMapping("/cart")
@@ -219,11 +230,13 @@ public class UserController {
 	}
 
 	@GetMapping("/orders")
-	public String orderPage(Principal p, Model m) {
+	public String orderPage( Principal p, Model m) {
 	    UserDtls user = getLoggedInUserDetails(p);
 	    List<Cart> carts = cartService.getCartsByUser(user.getId());
 	    m.addAttribute("carts", carts);
 
+	    boolean isEligibleForRedemption = loyaltyPointService.isEligibleForRedemption(user.getId(), 2000.0);
+	    
 	    double orderPrice = 0.0;
 	    double tax = 0.0;
 	    double totalOrderPrice = 0.0;
@@ -250,6 +263,7 @@ public class UserController {
 	        m.addAttribute("discountPercentage", discountPercentage);
 	        m.addAttribute("discountAmount", discountAmount);
 	        m.addAttribute("totalAfterDiscount", totalAfterDiscount);
+	        m.addAttribute("isEligibleForRedemption", isEligibleForRedemption);
 	        System.out.println("Controller - Total Order Price: " + totalOrderPrice);
 	    }
 

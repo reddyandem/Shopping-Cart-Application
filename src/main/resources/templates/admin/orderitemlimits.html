@@ -4,30 +4,52 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Manage Item Limits</title>
-
+<script th:src="@{/js/script.js}"></script>
 </head>
 <body>
     <section>
+
         <div class="container mt-5 p-5">
-            <h2 class="text-center">Manage Item Limits</h2>
-            <div class="card p-3 mb-3">
-                <h4>Create New Item Limit</h4>
+            <h2 class="text-center">Add Order Item Limit</h2>
+            <!-- Error and Success Messages -->
+            <th:block th:if="${session.errorMsg}">
+                <div class="alert alert-danger text-center">
+                    [[${session.errorMsg}]]
+                    <th:block th:text="${@commnServiceImpl.removeSessionMessage()}"></th:block>
+                </div>
+            </th:block>
+            <th:block th:if="${session.succMsg}">
+                <div class="alert alert-success text-center">
+                    [[${session.succMsg}]]
+                    <th:block th:text="${@commnServiceImpl.removeSessionMessage()}"></th:block>
+                </div>
+            </th:block>
+            <div class="card p-3">
                 <form th:action="@{/admin/save-order-item-limit}" method="post">
+                    <!-- Product ID -->
                     <div class="mb-3">
-                        <label>Product ID</label>
-                        <input type="number" name="productId" class="form-control" required>
+                        <label for="productId" class="form-label">Product ID</label>
+                        <input type="number" class="form-control" id="productId" name="productId" min="1" required>
+                        <div id="productIdError" class="text-danger" style="display: none;">Product ID must be greater than 0.</div>
                     </div>
+
+                    <!-- Limit Quantity -->
                     <div class="mb-3">
-                        <label>Limit Quantity</label>
-                        <input type="number" name="limitQuantity" class="form-control" required>
+                        <label for="limitQuantity" class="form-label">Limit Quantity</label>
+                        <input type="number" class="form-control" id="limitQuantity" name="limitQuantity" min="1" required>
+                        <div id="quantityError" class="text-danger" style="display: none;">Quantity must be greater than 0.</div>
                     </div>
+
+                    <!-- Start Date -->
                     <div class="mb-3">
-                        <label>Start Date</label>
-                        <input type="date" name="startDate" class="form-control" required>
+                        <label for="startDate" class="form-label">Start Date</label>
+                        <input type="date" class="form-control" id="startDate" name="startDate" required>
                     </div>
+
+                    <!-- End Date -->
                     <div class="mb-3">
-                        <label>End Date</label>
-                        <input type="date" name="endDate" class="form-control" required>
+                        <label for="endDate" class="form-label">End Date</label>
+                        <input type="date" class="form-control" id="endDate" name="endDate" required>
                     </div>
                     <div class="mb-3">
                         <label>Active</label>

@@ -83,7 +83,7 @@
                                             <td><strong>$[[${#numbers.formatDecimal(totalOrderPrice, 1, 2)}]]</strong></td>
                                         </tr>
                                         <!-- Loyalty Points Redemption Section -->
-                                        <tr class="border-top">
+                                       <tr th:if = "${isEligibleForRedemption}" class="border-top">
                                             <td colspan="2">
                                                 <label>
                                                     <input type="checkbox" id="redeemCheckbox" name="redeemApplied" value="true">
@@ -94,10 +94,14 @@
                                                 <strong id="redeemAmountDisplay">$[[${#numbers.formatDecimal(0.00, 1, 2)}]]</strong>
                                             </td>
                                         </tr>
-                                    
-                                        <tr th:unless="${totalPoints >= 2000}">
+                                        <tr th:unless="${isEligibleForRedemption}">
                                             <td colspan="3" class="text-danger">
-                                                You need at least 2000 points to redeem. Current points: <span th:text="${totalPoints}"></span>
+                                                <span th:if="${totalPoints < 2000}">
+                                                    You need at least 2000 points to redeem. Current points: [[${totalPoints}]].
+                                                </span>
+                                                <span th:unless="${totalPoints < 2000}">
+                                                    You need more than 5 past orders to redeem points.
+                                                </span>
                                             </td>
                                         </tr>
                                         <tr th:if="${discountPercentage != null and discountPercentage > 0}" class="border-top">

@@ -9,6 +9,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,6 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.ecom.controller.AdminController;
 import com.ecom.model.UserDtls;
 import com.ecom.repository.UserRepository;
 import com.ecom.service.UserService;
@@ -183,5 +186,16 @@ public class UserServiceImpl implements UserService {
 		return userRepository.findById(id).orElse(null);
 		
 	}
+	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
+	@Override
+    public UserDtls updateUserDiscount(Integer userId, Double discount) {
+        logger.info("Updating discount for userId: {}, new discount: {}", userId, discount);
+        UserDtls user = userRepository.findById(userId)
+                .orElseThrow(() -> new IllegalArgumentException("User not found for id: " + userId));
+        user.setDiscount(discount != null && discount >= 0 ? discount : 0.0);
+        UserDtls updatedUser = userRepository.save(user);
+        logger.info("Updated discount for userId: {}, discount: {}", userId, updatedUser.getDiscount());
+        return updatedUser;
+    }
 
 }

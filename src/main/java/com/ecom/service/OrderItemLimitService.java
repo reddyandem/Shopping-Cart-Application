@@ -19,6 +19,7 @@ public class OrderItemLimitService {
     private OrderItemLimitRepository orderItemLimitRepository;
 
     public OrderItemLimit saveOrderItemLimit(OrderItemLimit limit) {
+    	
         return orderItemLimitRepository.save(limit);
     }
 
@@ -30,10 +31,14 @@ public class OrderItemLimitService {
     }
 
     public List<OrderItemLimit> getActiveLimitByProductId(Integer productId) {
-    	List<OrderItemLimit> limits = orderItemLimitRepository.findByProductIdAndIsActiveTrue(productId);
-        logger.info("Query result for productId {}: {}", productId, limits);
+        logger.info("Fetching active limits for productId: {}", productId);
+        LocalDate now = LocalDate.now();
+        List<OrderItemLimit> limits = orderItemLimitRepository.findByProductIdAndIsActiveTrueAndStartDateLessThanEqualAndEndDateGreaterThanEqual(
+            productId, now, now);
+        logger.info("Found {} active limits for productId {}: {}", limits.size(), productId, limits);
         return limits;
     }
+    
 
     public boolean isWithinLimit(Integer productId, int quantity) {
         LocalDate now = LocalDate.now();
@@ -44,4 +49,13 @@ public class OrderItemLimitService {
         return activeLimits.stream().anyMatch(limit ->
                 now.isAfter(limit.getStartDate()) && !now.isAfter(limit.getEndDate()) && quantity <= limit.getLimitQuantity());
     }
-}
+    
+    
+    public boolean existsByProductId(Integer productId) {
+    	logger.info("Checking if order item limit exists for productId: {}", productId);
+        boolean exists = orderItemLimitRepository.existsByProductId(productId);
+        logger.info("Result for productId {}: {}", productId, exists);
+        return exists;
+    }
+    
+    }
